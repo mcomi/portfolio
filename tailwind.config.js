@@ -12,7 +12,14 @@ module.exports = {
   },
   darkMode: "class", // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      maxHeight: {
+        125: "31.25rem",
+      },
+      minHeight: {
+        125: "31.25rem",
+      },
+    },
   },
   variants: {
     extend: {},
