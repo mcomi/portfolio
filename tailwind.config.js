@@ -1,7 +1,16 @@
 module.exports = {
-  mode: 'jit',
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  mode: "jit",
+  purge: {
+    enabled: true,
+    content: [
+      "./pages/**/*.{js,ts,jsx,tsx}",
+      "./components/**/*.{js,ts,jsx,tsx}",
+    ],
+    options: {
+      safelist: ["dark"], //specific classes
+    },
+  },
+  darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {},
   },
@@ -9,4 +18,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+};
