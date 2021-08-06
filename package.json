@@ -9,7 +9,8 @@
     "next": "latest",
     "prismjs": "^1.24.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-prism-editor": "^1.1.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.6",

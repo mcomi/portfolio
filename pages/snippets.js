@@ -1,16 +1,5 @@
 import React from "react";
-import Snippet from "./components/Snippet";
-
-const code = `const App = props => {
-  return (
-    <div>
-      <h1> React App </h1>
-      <div>Awesome code</div>
-    </div>
-  );
-};
-`;
 
 export default function Snippets() {
-  return <Snippet code={code} language="javascript" />;
+  return <div>Snippets</div>;
 }
