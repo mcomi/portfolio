@@ -7,6 +7,30 @@ export default function Home() {
       <Head>
         <title>Portfolio - Manuel Comi Xolot</title>
         <link rel="icon" href="/favicon.ico" />
+        <link
+            rel="preload"
+            href="https://unpkg.com/prismjs@0.0.1/themes/prism-tomorrow.css"
+            as="script"
+        />
+        <link
+            rel="preload"
+            href="https://unpkg.com/prismjs@0.0.1/themes/prism-coy.css"
+            as="script"
+        />
+        <link
+            rel="preload"
+            href="https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css"
+            as="script"
+        />
+        <link
+            rel="preload"
+            href="https://unpkg.com/prismjs@0.0.1/themes/prism-funky.css"
+            as="script"
+        />
+        <link
+            href={`https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css`}
+            rel="stylesheet"
+        />
       </Head>
       <h1 className="text-3xl font-bold">
         Hi, I'm{" "}
