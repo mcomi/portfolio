@@ -10,7 +10,7 @@ export default function Layout({ children }) {
     <>
       <div className="dark:bg-gray-800 dark:text-white flex flex-col items-center justify-center min-h-screen">
         <Navbar colorTheme={colorTheme} setTheme={setTheme} />
-        <main className="dark:text-white text-gray-800 flex justify-center w-full flex-1 px-20 text-center">
+        <main className="dark:text-white text-gray-800 flex flex-col justify-center w-full flex-1 lg:px-20 px-5 text-center">
           {children}
         </main>
         <Footer />
