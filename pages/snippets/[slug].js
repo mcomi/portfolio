@@ -1,6 +1,6 @@
 import React from "react";
 import { getAllDocs, getDocBySlug } from "../../lib/docs";
-import markdownToHtml from "../../lib/markdown";
+import {markdownToHtml} from "../../lib/markdown";
 
 export default function Doc({ meta, content }) {
   return (
