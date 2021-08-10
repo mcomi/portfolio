@@ -1,21 +1,21 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-      <Head>
+        <Head>
           <link
-              rel="preload"
-              href="https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css"
-              as="script"
+            rel="preload"
+            href="https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css"
+            as="script"
           />
           <link
-              href={`https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css`}
-              rel="stylesheet"
+            href={`https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css`}
+            rel="stylesheet"
           />
-      </Head>
-        <body className="bg-gray-100">
+        </Head>
+        <body className="dark:bg-gray-800 dark:text-white bg-gray-100">
           <Main />
           <NextScript />
         </body>

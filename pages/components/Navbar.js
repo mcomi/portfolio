@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import useDarkMode from "../hooks/useDarkMode";
 
 export default function Navbar({ colorTheme, setTheme }) {
   const [isActive, setActive] = useState(false);
@@ -70,7 +69,7 @@ export default function Navbar({ colorTheme, setTheme }) {
                   </a>
                 </Link>
               </div>
-              {colorTheme === "light" ? (
+              {colorTheme === "dark" ? (
                 <div
                   className="flex  items-center mr-2 cursor-pointer"
                   onClick={() => setTheme("light")}
