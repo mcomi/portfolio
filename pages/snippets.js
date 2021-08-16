@@ -27,8 +27,8 @@ export default function Home() {
           other things.
         </p>
         <p className="lg:text-lg py-3">
-          El contenido está dividido en diferentes categorías para que sea más
-          sencillo navegar entre los diferentes temas.
+          The content is divided into different categories to make it easier to
+          navigate between the different topics.
         </p>
       </div>
       <div className="w-full max-w-3xl mx-auto mt-6 sm:w-full">
