@@ -9,7 +9,7 @@ export default function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Copyright © 2021
+        Manuel Comi © 2021
       </a>
     </footer>
   );

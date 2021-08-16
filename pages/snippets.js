@@ -18,75 +18,88 @@ export default function Home() {
         />
       </Head>
 
-      <div className="flex flex-wrap items-center justify-around max-w-6xl mt-6 sm:w-full">
-        <aside class="w-full p-6 sm:w-60 text-gray-800 dark:text-white">
-          <nav class="space-y-8 text-sm">
+      <div className="w-full max-w-3xl mx-auto">
+        <h1 className="text-2xl pb-3">Snippets</h1>
+        <p className="lg:text-lg py-3">
+          Here you will be able to review different topics of study very useful
+          to master web development, as well as several useful code snippets,
+          configurations to integrate some technologies or some examples, among
+          other things.
+        </p>
+        <p className="lg:text-lg py-3">
+          El contenido está dividido en diferentes categorías para que sea más
+          sencillo navegar entre los diferentes temas.
+        </p>
+      </div>
+      <div className="w-full max-w-3xl mx-auto mt-6 sm:w-full">
+        <div class="w-full p-6 sm:w-60 text-gray-800 dark:text-white mx-auto">
+          <divs class="space-y-8 text-sm">
             <div class="space-y-2">
-              <h2 class="text-sm font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
+              <h2 class="text-lg font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
                 Javascript
               </h2>
               <div class="flex flex-col space-y-1">
                 <a
                   href="/snippets/javascript-internals"
-                  class="text-xs text-gray-700 dark:text-white"
+                  class="text-base text-gray-700 dark:text-white"
                 >
                   Javascript Internals
                 </a>
                 <a
                   href="/snippets/javascript-types"
-                  class="text-xs text-gray-700 dark:text-white"
+                  class="text-base text-gray-700 dark:text-white"
                 >
                   Javascript Types
                 </a>
                 <a
                   href="/snippets/javascript-asynchronous"
-                  class="text-xs text-gray-700 dark:text-white"
+                  class="text-base text-gray-700 dark:text-white"
                 >
                   Javascript Asynchronous
                 </a>
               </div>
             </div>
             <div class="space-y-2">
-              <h2 class="text-sm font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
+              <h2 class="text-lg font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
                 React
               </h2>
               <div class="flex flex-col space-y-1">
                 <a
                   href="/snippets/react"
-                  class="text-xs text-gray-700 dark:text-white"
+                  class="text-base text-gray-700 dark:text-white"
                 >
                   Useful snippets
                 </a>
               </div>
             </div>
             <div class="space-y-2">
-              <h2 class="text-sm font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
+              <h2 class="text-lg font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
                 Docker
               </h2>
               <div class="flex flex-col space-y-1">
                 <a
                   href="/snippets/docker"
-                  class="text-xs text-gray-700 dark:text-white"
+                  class="text-base text-gray-700 dark:text-white"
                 >
                   Useful snippets
                 </a>
               </div>
             </div>
             <div class="space-y-2">
-              <h2 class="text-sm font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
+              <h2 class="text-lg font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
                 Next.js
               </h2>
               <div class="flex flex-col space-y-1">
                 <a
-                  href="/snippets/docker"
-                  class="text-xs text-gray-700 dark:text-white"
+                  href="/snippets/prism"
+                  class="text-base text-gray-700 dark:text-white"
                 >
                   Next.js + Prism
                 </a>
               </div>
             </div>
-          </nav>
-        </aside>
+          </divs>
+        </div>
       </div>
     </>
   );

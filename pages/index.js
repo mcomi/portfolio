@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Navbar from "../components/Navbar";
+import Image from "next/image";
+import icon from "../assets/developer.png";
 
 export default function Home() {
   return (
@@ -8,63 +10,44 @@ export default function Home() {
         <title>Portfolio - Manuel Comi Xolot</title>
         <link rel="icon" href="/favicon.ico" />
         <link
-            rel="preload"
-            href="https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css"
-            as="script"
+          rel="preload"
+          href="https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css"
+          as="script"
         />
         <link
-            href={`https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css`}
-            rel="stylesheet"
+          href={`https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css`}
+          rel="stylesheet"
         />
       </Head>
-      <h1 className="text-3xl font-bold">
-        Hi, I'm{" "}
-        <a className="text-blue-600" href="https://nextjs.org">
-          Manuel
-        </a>
-        . Nice to meet you.
-      </h1>
+      <div class="max-w-4xl mx-auto">
+        <div className="w-32 lg:w-56 mx-auto">
+          <Image src={icon}></Image>
+        </div>
+        <h1 className="text-xl lg:text-3xl font-bold pb-5">
+          Hi, I'm{" "}
+          <a className="text-blue-600" href="https://nextjs.org">
+            Manuel
+          </a>
+          . Nice to meet you.
+        </h1>
 
-      <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-        <a
-          href="/demos"
-          className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-        >
-          <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-          <p className="mt-4 text-xl">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn"
-          className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-        >
-          <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-          <p className="mt-4 text-xl">
-            Learn about Next.js in an interactive course with quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://github.com/vercel/next.js/tree/master/examples"
-          className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-        >
-          <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-          <p className="mt-4 text-xl">
-            Discover and deploy boilerplate example Next.js projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-        >
-          <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-          <p className="mt-4 text-xl">
-            Instantly deploy your Next.js site to a public URL with Vercel.
-          </p>
-        </a>
+        <p className="lg:text-xl py-3">
+          I'm a Software Engineer with 13 years of experience based in Mexico
+          City.
+        </p>
+        <p className="lg:text-xl py-3">
+          I'm specialized in leading software development and front-end
+          technologies; and for the last 8 years I have been managing and
+          leading a team of engineers at Filmoteca UNAM to develop technological
+          solutions. The most important one, a collection management software to
+          preserve film archives, which has been recognized within UNAM as a
+          high impact institutional software project.
+        </p>
+        <p className="lg:text-xl py-3">
+          I put together this website to show my passion for web technologies
+          and some of the work I have done, as well as a guide of concepts and
+          code snippets that have been useful during my learning process.
+        </p>
       </div>
     </>
   );
