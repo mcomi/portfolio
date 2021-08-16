@@ -90,7 +90,7 @@ export default function Doc({ meta, content }) {
       </div>
       <button
         type="button"
-        class="fixed z-50 bottom-4 right-4 w-16 h-16 rounded-full bg-gray-900 text-white block lg:hidden"
+        class="fixed z-50 bottom-4 right-4 w-16 h-16 rounded-full bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 block lg:hidden"
         onClick={showNavigation}
       >
         <span class="sr-only">Open docs navigation</span>
