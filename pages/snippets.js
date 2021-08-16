@@ -18,37 +18,75 @@ export default function Home() {
         />
       </Head>
 
-      <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-        <a
-          href="/snippets/prism"
-          className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-        >
-          <h3 className="text-2xl font-bold">Prism example</h3>
-        </a>
-      </div>
-      <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-        <a
-          href="/snippets/javascript"
-          className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-        >
-          <h3 className="text-2xl font-bold">Javascript</h3>
-        </a>
-      </div>
-      <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-        <a
-          href="/snippets/react"
-          className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-        >
-          <h3 className="text-2xl font-bold">React</h3>
-        </a>
-      </div>
-      <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-        <a
-          href="/snippets/docker"
-          className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-        >
-          <h3 className="text-2xl font-bold">Docker</h3>
-        </a>
+      <div className="flex flex-wrap items-center justify-around max-w-6xl mt-6 sm:w-full">
+        <aside class="w-full p-6 sm:w-60 text-gray-800 dark:text-white">
+          <nav class="space-y-8 text-sm">
+            <div class="space-y-2">
+              <h2 class="text-sm font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
+                Javascript
+              </h2>
+              <div class="flex flex-col space-y-1">
+                <a
+                  href="/snippets/javascript-internals"
+                  class="text-xs text-gray-700 dark:text-white"
+                >
+                  Javascript Internals
+                </a>
+                <a
+                  href="/snippets/javascript-types"
+                  class="text-xs text-gray-700 dark:text-white"
+                >
+                  Javascript Types
+                </a>
+                <a
+                  href="/snippets/javascript-asynchronous"
+                  class="text-xs text-gray-700 dark:text-white"
+                >
+                  Javascript Asynchronous
+                </a>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <h2 class="text-sm font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
+                React
+              </h2>
+              <div class="flex flex-col space-y-1">
+                <a
+                  href="/snippets/react"
+                  class="text-xs text-gray-700 dark:text-white"
+                >
+                  Useful snippets
+                </a>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <h2 class="text-sm font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
+                Docker
+              </h2>
+              <div class="flex flex-col space-y-1">
+                <a
+                  href="/snippets/docker"
+                  class="text-xs text-gray-700 dark:text-white"
+                >
+                  Useful snippets
+                </a>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <h2 class="text-sm font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
+                Next.js
+              </h2>
+              <div class="flex flex-col space-y-1">
+                <a
+                  href="/snippets/docker"
+                  class="text-xs text-gray-700 dark:text-white"
+                >
+                  Next.js + Prism
+                </a>
+              </div>
+            </div>
+          </nav>
+        </aside>
       </div>
     </>
   );

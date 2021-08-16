@@ -2,12 +2,12 @@
 title: Javascript snippets
 description: Useful Javascript Code snippets
 ---
+
 # Javascript
 
 ## Table of Contents
 
-
-## Capitalizes the first letter of a string.
+### Capitalizes the first letter of a string.
 
 - Use array destructuring and `String.prototype.toUpperCase()` to capitalize the first letter of the string.
 - Use `Array.prototype.join('')` to combine the capitalized `first` with the `...rest` of the characters.

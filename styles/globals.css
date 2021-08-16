@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#table-of-contents ~ ul {
+  text-align: left;
+}
+
+#skip > article > p {
+  text-align: left;
+}
+
+#skip > article > p > img {
+  margin: 0 auto;
+}
+
+#skip > article > p ~ ol {
+  text-align: left;
+}
+
+.lg\:prose-xl ul > li::before p > a {
+  content: none;
+}
+
+/* from: https://github.com/chasm/gatsby-remark-prismjs/blob/af90edfd6f378a7ffd8d70e50a540077795e5c2c/README.md#L83-L110 */
+/* container of the code block */
+
+/* Gutter for line numbers when the line-numbers plugin is active */
+.remark-highlight pre[class*="language-"].line-numbers {
+  padding-left: 2.8em;
+}
+
+pre.line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+  position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  left: -3.8em;
+  width: 3em; /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  border-right: 1px solid #999;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.line-numbers-rows > span {
+  pointer-events: none;
+  display: block;
+  counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+  content: counter(linenumber);
+  color: #999;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+}

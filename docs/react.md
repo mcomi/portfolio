@@ -3,7 +3,9 @@ title: React Snippets
 description: Some useful react snippets
 ---
 
-Renders a tag input field.
+## Table of contents
+
+## Renders a tag input field.
 
 - Define a `TagInput` component and use the `useState()` hook to initialize an array from `tags`.
 - Use `Array.prototype.map()` on the collected nodes to render the list of tags.
