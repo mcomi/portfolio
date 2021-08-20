@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-export default function ItemsNav({ slugs, titles }) {
-  const [slugsForShow, setSlugs] = useState([]);
+export default function ItemsNav({ section, slugs, titles }) {
   return (
     <div class="w-full p-6 sm:w-60 text-gray-800 dark:text-white mx-auto">
       <div class="space-y-8 text-sm">
@@ -10,7 +9,7 @@ export default function ItemsNav({ slugs, titles }) {
             {slugs.map((slug, index) => {
               return (
                 <a
-                  href={`/guides/${slug}`}
+                  href={`/${section}/${slug}`}
                   class="text-base text-gray-700 dark:text-white"
                 >
                   {titles[index]}

@@ -1,8 +1,19 @@
 import React, { useState } from "react";
-import { getAllSnippets, getSnippetBySlug } from "../../lib/snippets";
+import {
+  getAllSnippets,
+  getSnippetBySlug,
+  getAllSnippetsSlugs,
+  getAllSnippetsTitles,
+} from "../../lib/snippets";
 import { markdownToHtml } from "../../lib/markdown";
+import ItemsNav from "../../components/ItemsNav";
 
-export default function Snippet({ meta, content }) {
+export default function Snippet({
+  meta,
+  content,
+  snippetsSlugs,
+  snippetsTitles,
+}) {
   const [menuActive, setMenuActive] = useState(false);
   const showNavigation = () => {
     setMenuActive(!menuActive);
@@ -17,69 +28,15 @@ export default function Snippet({ meta, content }) {
           }`}
         >
           <nav class="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 bg-gray-100 dark:bg-gray-900 lg:text-lg pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)">
+            <h2 class="pt-4 text-sm lg:text-lg font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
+              Snippets Menu
+            </h2>
             <div class="space-y-4">
-              <h2 class="pt-4 text-sm lg:text-lg font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
-                Javascript
-              </h2>
-              <div class="flex flex-col space-y-2">
-                <a
-                  href="/snippets/javascript-internals"
-                  class="text-xs lg:text-base text-gray-700 dark:text-white"
-                >
-                  Javascript Internals
-                </a>
-                <a
-                  href="/snippets/javascript-types"
-                  class="text-xs lg:text-base text-gray-700 dark:text-white"
-                >
-                  Javascript Types
-                </a>
-                <a
-                  href="/snippets/javascript-asynchronous"
-                  class="text-xs lg:text-base text-gray-700 dark:text-white"
-                >
-                  Javascript Asynchronous
-                </a>
-              </div>
-            </div>
-            <div class="space-y-4">
-              <h2 class="pt-4 text-sm font-semibold lg:text-lg tracking-widest uppercase text-gray-600 dark:text-white">
-                React
-              </h2>
-              <div class="flex flex-col space-y-2">
-                <a
-                  href="/snippets/react"
-                  class="text-xs lg:text-base text-gray-700 dark:text-white"
-                >
-                  Useful snippets
-                </a>
-              </div>
-            </div>
-            <div class="space-y-4">
-              <h2 class="pt-4 text-sm font-semibold lg:text-lg tracking-widest uppercase text-gray-600 dark:text-white">
-                Docker
-              </h2>
-              <div class="flex flex-col space-y-2">
-                <a
-                  href="/snippets/docker"
-                  class="text-xs lg:text-base text-gray-700 dark:text-white"
-                >
-                  Useful snippets
-                </a>
-              </div>
-            </div>
-            <div class="space-y-4">
-              <h2 class="pt-4 text-sm font-semibold lg:text-lg tracking-widest uppercase text-gray-600 dark:text-white">
-                Next.js
-              </h2>
-              <div class="flex flex-col space-y-2">
-                <a
-                  href="/snippets/prism"
-                  class="text-xs lg:text-base text-gray-700 dark:text-white"
-                >
-                  Next.js + Prism
-                </a>
-              </div>
+              <ItemsNav
+                section="snippets"
+                slugs={snippetsSlugs}
+                titles={snippetsTitles}
+              />
             </div>
           </nav>
         </aside>
@@ -149,10 +106,14 @@ export default function Snippet({ meta, content }) {
 export async function getStaticProps({ params }) {
   const snippet = getSnippetBySlug(params.slug);
   const content = await markdownToHtml(snippet.content || "");
+  const snippetsSlugs = getAllSnippetsSlugs();
+  const snippetsTitles = getAllSnippetsTitles();
   return {
     props: {
       ...snippet,
       content,
+      snippetsSlugs,
+      snippetsTitles,
     },
   };
 }

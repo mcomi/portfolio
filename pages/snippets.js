@@ -24,18 +24,20 @@ export default function Snippets({ snippetsSlugs, snippetsTitles }) {
       <div className="w-full max-w-3xl mx-auto">
         <h1 className="text-2xl pb-3">Snippets</h1>
         <p className="lg:text-lg py-3">
-          Here you will be able to review different topics of study very useful
-          to master web development, as well as several useful code snippets,
-          configurations to integrate some technologies or some examples, among
-          other things.
-        </p>
-        <p className="lg:text-lg py-3">
-          The content is divided into different categories to make it easier to
-          navigate between the different topics.
+          Many times we need code that we have already used previously for some
+          project. In this section I put some code snippets that I have found
+          useful to have at hand.
         </p>
       </div>
       <div className="w-full max-w-3xl mx-auto mt-6 sm:w-full">
-        <ItemsNav slugs={snippetsSlugs} titles={snippetsTitles} />
+        <h2 class="pt-4 text-sm lg:text-lg font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
+          Menu
+        </h2>
+        <ItemsNav
+          section="snippets"
+          slugs={snippetsSlugs}
+          titles={snippetsTitles}
+        />
       </div>
     </>
   );
