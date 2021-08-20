@@ -29,7 +29,7 @@ export default function Doc({ meta, content, guidesSlugs, guidesTitles }) {
               </h2>
               <div class="space-y-4">
                 <ItemsNav
-                  section="snippets"
+                  section="articles"
                   slugs={guidesSlugs}
                   titles={guidesTitles}
                 />
