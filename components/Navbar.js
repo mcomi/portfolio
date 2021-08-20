@@ -104,6 +104,11 @@ export default function Navbar({ colorTheme, setTheme }) {
                     Websites
                   </a>
                 </Link>
+                <Link href="/guides">
+                  <a className="mt-4 inline-block lg:mt-0 text-teal-200 hover:text-blue-600 mr-4">
+                    Guides
+                  </a>
+                </Link>
                 <Link href="/snippets">
                   <a className="mt-4 inline-block lg:mt-0 text-teal-200 hover:text-blue-600">
                     Snippets
@@ -208,6 +213,11 @@ export default function Navbar({ colorTheme, setTheme }) {
           <Link href="/websites">
             <a className="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-600 mr-4">
               Websites
+            </a>
+          </Link>
+          <Link href="/guides">
+            <a className="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-600">
+              Guides
             </a>
           </Link>
           <Link href="/snippets">

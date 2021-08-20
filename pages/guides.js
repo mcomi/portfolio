@@ -2,9 +2,9 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import ItemsNav from "../components/ItemsNav";
 
-import { getAllSnippetsSlugs, getAllSnippetsTitles } from "../lib/snippets";
+import { getAllDocsSlugs, getAllDocsTitles } from "../lib/docs";
 
-export default function Snippets({ snippetsSlugs, snippetsTitles }) {
+export default function Guides({ guidesSlugs, guidesTitles }) {
   return (
     <>
       <Head>
@@ -22,7 +22,7 @@ export default function Snippets({ snippetsSlugs, snippetsTitles }) {
       </Head>
 
       <div className="w-full max-w-3xl mx-auto">
-        <h1 className="text-2xl pb-3">Snippets</h1>
+        <h1 className="text-2xl pb-3">Guides</h1>
         <p className="lg:text-lg py-3">
           Here you will be able to review different topics of study very useful
           to master web development, as well as several useful code snippets,
@@ -35,20 +35,20 @@ export default function Snippets({ snippetsSlugs, snippetsTitles }) {
         </p>
       </div>
       <div className="w-full max-w-3xl mx-auto mt-6 sm:w-full">
-        <ItemsNav slugs={snippetsSlugs} titles={snippetsTitles} />
+        <ItemsNav slugs={guidesSlugs} titles={guidesTitles} />
       </div>
     </>
   );
 }
 
 export async function getStaticProps() {
-  const snippetsSlugs = getAllSnippetsSlugs();
-  const snippetsTitles = getAllSnippetsTitles();
+  const guidesSlugs = getAllDocsSlugs();
+  const guidesTitles = getAllDocsTitles();
 
   return {
     props: {
-      snippetsSlugs,
-      snippetsTitles,
+      guidesSlugs,
+      guidesTitles,
     },
   };
 }

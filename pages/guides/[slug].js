@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { getAllSnippets, getSnippetBySlug } from "../../lib/snippets";
+import { getAllDocs, getDocBySlug } from "../../lib/docs";
 import { markdownToHtml } from "../../lib/markdown";
 
-export default function Snippet({ meta, content }) {
+export default function Doc({ meta, content }) {
   const [menuActive, setMenuActive] = useState(false);
   const showNavigation = () => {
     setMenuActive(!menuActive);
@@ -147,24 +147,24 @@ export default function Snippet({ meta, content }) {
 }
 
 export async function getStaticProps({ params }) {
-  const snippet = getSnippetBySlug(params.slug);
-  const content = await markdownToHtml(snippet.content || "");
+  const doc = getDocBySlug(params.slug);
+  const content = await markdownToHtml(doc.content || "");
   return {
     props: {
-      ...snippet,
+      ...doc,
       content,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const snippets = getAllSnippets();
+  const docs = getAllDocs();
 
   return {
-    paths: snippets.map((snippet) => {
+    paths: docs.map((doc) => {
       return {
         params: {
-          slug: snippet.slug,
+          slug: doc.slug,
         },
       };
     }),
