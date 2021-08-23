@@ -10,6 +10,13 @@ module.exports = {
         dark: "#24283b",
       },
 
+      maxHeight: {
+        64: "31.25rem",
+      },
+      minHeight: {
+        25: "25rem",
+      },
+
       typography: (theme) => ({
         dark: {
           css: {

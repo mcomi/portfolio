@@ -29,7 +29,7 @@ export default function Navbar({ colorTheme, setTheme }) {
                   />
                 </svg>
 
-                <span className="mx-3 font-medium text-base md:text-lg">
+                <span className="mx-3 font-thin text-lg md:text-xl uppercase">
                   Manuel Comi
                 </span>
               </a>
@@ -93,24 +93,24 @@ export default function Navbar({ colorTheme, setTheme }) {
             </div>
 
             <div className="w-full hidden md:flex flex-grow items-center lg:w-auto">
-              <div className="text-sm md:flex-grow">
+              <div className="text-base md:flex-grow">
                 <Link href="/demos">
-                  <a className="mt-4 inline-block lg:mt-0 text-teal-200 hover:text-blue-600 mr-4">
+                  <a className="font-thin tracking-wider mt-4 inline-block lg:mt-0 text-teal-200 hover:font-semibold hover:scale-110 mr-4">
                     Demos
                   </a>
                 </Link>
                 <Link href="/websites">
-                  <a className="mt-4 inline-block lg:mt-0 text-teal-200 hover:text-blue-600 mr-4">
+                  <a className="font-thin tracking-wider mt-4 inline-block lg:mt-0 text-teal-200 hover:font-semibold hover:scale-110 mr-4">
                     Websites
                   </a>
                 </Link>
                 <Link href="/articles">
-                  <a className="mt-4 inline-block lg:mt-0 text-teal-200 hover:text-blue-600 mr-4">
+                  <a className="font-thin tracking-wider mt-4 inline-block lg:mt-0 text-teal-200 hover:font-semibold hover:scale-110 mr-4">
                     Articles
                   </a>
                 </Link>
                 <Link href="/snippets">
-                  <a className="mt-4 inline-block lg:mt-0 text-teal-200 hover:text-blue-600">
+                  <a className="font-thin tracking-wider mt-4 inline-block lg:mt-0 text-teal-200 hover:font-semibold hover:scale-110">
                     Snippets
                   </a>
                 </Link>
@@ -134,7 +134,9 @@ export default function Navbar({ colorTheme, setTheme }) {
                       d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
                     />
                   </svg>
-                  <span className="mx-2 text-sm">Light</span>
+                  <span className="mx-2 text-sm font-thin tracking-wider">
+                    Light
+                  </span>
                 </div>
               ) : (
                 <div
@@ -155,7 +157,9 @@ export default function Navbar({ colorTheme, setTheme }) {
                       d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
                     />
                   </svg>
-                  <span className="mx-2 text-sm">Dark</span>
+                  <span className="mx-2 text-sm font-thin tracking-wider">
+                    Dark
+                  </span>
                 </div>
               )}
               <a
@@ -206,22 +210,22 @@ export default function Navbar({ colorTheme, setTheme }) {
       <div className={isActive ? "flex" : "hidden"}>
         <ul className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <Link href="/demos">
-            <a className="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-600 mr-4">
+            <a className="block px-3 py-2 rounded-md text-base font-thin tracking-wider hover:text-blue-600 mr-4">
               Demos
             </a>
           </Link>
           <Link href="/websites">
-            <a className="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-600 mr-4">
+            <a className="block px-3 py-2 rounded-md text-base font-thin tracking-wider hover:text-blue-600 mr-4">
               Websites
             </a>
           </Link>
           <Link href="/articles">
-            <a className="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-600">
+            <a className="block px-3 py-2 rounded-md text-base font-thin tracking-wider hover:text-blue-600">
               Articles
             </a>
           </Link>
           <Link href="/snippets">
-            <a className="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-600">
+            <a className="block px-3 py-2 rounded-md text-base font-thin tracking-wider hover:text-blue-600">
               Snippets
             </a>
           </Link>

@@ -1,26 +1,69 @@
 import React from "react";
+import Image from "next/image";
 
-export default function Card() {
+export default function Card({ title, image, description, tags, visit }) {
+  const shimmer = (w, h) => `
+<svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="g">
+      <stop stop-color="#00B7FF" offset="20%" />
+      <stop stop-color="#18E3FF" offset="50%" />
+      <stop stop-color="#00B7FF" offset="70%" />
+    </linearGradient>
+  </defs>
+  <rect width="${w}" height="${h}" fill="#00B7FF" />
+  <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
+  <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
+</svg>`;
+
+  const toBase64 = (str) =>
+    typeof window === "undefined"
+      ? Buffer.from(str).toString("base64")
+      : window.btoa(str);
   return (
-    <article
-      className="mx-auto max-w-sm shadow-xl bg-cover bg-center min-h-125 transform duration-500 hover:-translate-y-2 cursor-pointer group"
-      style={{
-        backgroundImage: `url(https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900)`,
-      }}
-    >
-      <div className="bg-black bg-opacity-20 min-h-125 px-10 flex flex-wrap flex-col pt-72 hover:bg-opacity-75 transform duration-300">
-        <h1 className="text-white text-3xl mb-5 transform translate-y-20 group-hover:translate-y-0 duration-300">
-          Website X
-        </h1>
-        <div className="w-32 h-1 bg-blue-500 rounded-full mb-5 transform translate-y-20 group-hover:translate-y-0 duration-300"></div>
-        <p className="opacity-0 text-white text-md group-hover:opacity-80 transform duration-500">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
-          beatae!
-          <span className="mt-2 test-sm block font-thin">
-            HTML & CSS | Javascript
-          </span>
-        </p>
+    <div className="p-4 max-w-sm">
+      <div className="group transform transition-all duration-500 ease-in-out hover:scale-105 bg-white dark:bg-gray-800 rounded-lg shadow-xl flex flex-col">
+        <div className="min-h-25 relative">
+          <Image
+            className="w-full rounded-t-lg object-cover object-center"
+            src={image}
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+            blurDataURL={`data:image/svg+xml;base64,${toBase64(
+              shimmer(700, 475)
+            )}`}
+            alt={title}
+          />
+        </div>
+        <div className="p-4 h-auto flex-grow flex flex-col justify-between">
+          <div>
+            <h1 className="block transition-all duration-500 ease-in-out dark:text-gray-200 text-blue-400 dark:group-hover:text-gray-100 group-hover:text-blue-600 font-semibold mb-2 text-base md:text-base lg:text-lg">
+              {title}
+            </h1>
+            <div className="text-gray-600 dark:text-gray-300 leading-relaxed block text-sm md:text-xs lg:text-sm">
+              {description}
+            </div>
+          </div>
+          <div className="flex mt-8">
+            {tags.map((tag) => {
+              return (
+                <div class="bg-gray-200 py-1 px-2 mr-2 rounded-full text-xs text-gray-700">
+                  {tag}
+                </div>
+              );
+            })}
+          </div>
+          <div className="flex justify-center mt-4">
+            <a
+              href={visit}
+              class="px-6 py-2 text-base border-2 rounded-full dark:text-gray-100 text-blue-800 dark:border-gray-100 border-blue-800 text-center dark:hover:bg-gray-100 dark:hover:text-gray-800 hover:bg-blue-800 hover:border-white hover:text-white md:text-1xl dark:border-secondary_light dark:text-secondary_light dark:hover:bg-secondary dark:hover:border-secondary dark:hover:text-secondary_dark mb-4 mr-4"
+            >
+              Visit
+            </a>
+          </div>
+        </div>
       </div>
-    </article>
+    </div>
   );
 }

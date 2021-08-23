@@ -1,13 +1,20 @@
 import React from "react";
 import Card from "../components/Card";
+import Image from "next/image";
+import { websites } from "../constants/constants";
 
 export default function Websites() {
   return (
     <div>
-      <h1 className="text-2xl my-3">Websites</h1>
+      <div class="flex flex-col justify-around uppercase max-w-3/5 pb-7">
+        <h1 class="text-lg pb-4 text-gray-400 tracking-wider">Websites</h1>
+        <span class="text-2xl font-bold tracking-widest">
+          what i have done?
+        </span>
+      </div>
       <div className="grid lg:grid-cols-3 2xl:grid-cols-4 grid-cols-1 gap-10 antialiased mb-4">
-        {[1, 2, 3, 4, 5].map((item) => {
-          return <Card />;
+        {websites.map((website, index) => {
+          return <Card key={website.title + index} {...website} />;
         })}
       </div>
     </div>

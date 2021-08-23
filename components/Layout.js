@@ -5,17 +5,21 @@ import { useTheme } from "next-themes";
 import Head from "next/head";
 
 export default function Layout({ children }) {
-  const { systemTheme, theme, setTheme } = useTheme();
-  const [isMounted, setIsMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  const dark = theme === "dark" ? true : false;
+
+  const [checked, setChecked] = useState(dark);
+  const [mounted, setMounted] = useState(false);
+
+  // When mounted on client, now we can show the UI
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
+    setTheme(checked ? "dark" : "light");
+  }, [checked, setTheme]);
 
-  const renderThemeChanger = () => {
-    if (!isMounted) return null;
-    const currentTheme = theme === "system" ? systemTheme : theme;
-  };
+  if (!mounted) return null;
 
   return (
     <>

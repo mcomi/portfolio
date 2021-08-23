@@ -19,7 +19,7 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-2xl mx-auto">
         <div className="w-32 lg:w-56 mx-auto">
           <Image src={icon}></Image>
         </div>
@@ -43,7 +43,7 @@ export default function Home() {
           preserve film archives, which has been recognized within UNAM as a
           high impact institutional software project.
         </p>
-        <p className="lg:text-xl py-3">
+        <p className="lg:text-xl pt-3 pb-10">
           I put together this website to show my passion for web technologies
           and some of the work I have done, as well as a guide of concepts and
           code snippets that have been useful during my learning process.
