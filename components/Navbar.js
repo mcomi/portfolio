@@ -208,7 +208,7 @@ export default function Navbar({ colorTheme, setTheme }) {
         </div>
       </div>
       <div
-        className={`fixed mt-16 z-40 inset-0 flex-none h-full dark:bg-gray-900 bg-opacity-25 w-full bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block ${
+        className={`fixed mt-16 z-40 inset-0 flex-none h-full dark:bg-gray-900 bg-opacity-25 w-full bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 ${
           isActive ? "" : "hidden"
         }`}
       >
