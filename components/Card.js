@@ -1,7 +1,14 @@
 import React from "react";
 import Image from "next/image";
 
-export default function Card({ title, image, description, tags, visit }) {
+export default function Card({
+  title,
+  image,
+  description,
+  tags,
+  visit,
+  source,
+}) {
   const shimmer = (w, h) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
@@ -38,14 +45,14 @@ export default function Card({ title, image, description, tags, visit }) {
         </div>
         <div className="p-4 h-auto flex-grow flex flex-col justify-between">
           <div>
-            <h1 className="block transition-all duration-500 ease-in-out dark:text-gray-200 text-blue-400 dark:group-hover:text-gray-100 group-hover:text-blue-600 font-semibold mb-2 text-base md:text-base lg:text-lg">
+            <h1 className="block transition-all duration-500 ease-in-out dark:text-gray-200 text-gray-800 dark:group-hover:text-gray-100 group-hover:text-blue-600 font-semibold mb-2 text-base md:text-base lg:text-lg">
               {title}
             </h1>
             <div className="text-gray-600 dark:text-gray-300 leading-relaxed block text-sm md:text-xs lg:text-sm">
               {description}
             </div>
           </div>
-          <div className="flex mt-8">
+          <div className="flex flex-wrap justify-evenly gap-2 mt-8">
             {tags.map((tag) => {
               return (
                 <div class="bg-gray-200 py-1 px-2 mr-2 rounded-full text-xs text-gray-700">
@@ -55,9 +62,19 @@ export default function Card({ title, image, description, tags, visit }) {
             })}
           </div>
           <div className="flex justify-center mt-4">
+            {source && (
+              <a
+                href={source}
+                target="_blank"
+                class="px-6 py-1 text-base border-2 rounded-full dark:text-gray-100 text-blue-800 dark:border-gray-100 border-blue-800 text-center dark:hover:bg-gray-100 dark:hover:text-gray-800 hover:bg-blue-800 hover:border-white hover:text-white md:text-base mb-4 mr-4"
+              >
+                Code
+              </a>
+            )}
             <a
               href={visit}
-              class="px-6 py-2 text-base border-2 rounded-full dark:text-gray-100 text-blue-800 dark:border-gray-100 border-blue-800 text-center dark:hover:bg-gray-100 dark:hover:text-gray-800 hover:bg-blue-800 hover:border-white hover:text-white md:text-1xl dark:border-secondary_light dark:text-secondary_light dark:hover:bg-secondary dark:hover:border-secondary dark:hover:text-secondary_dark mb-4 mr-4"
+              target="_blank"
+              class="px-6 py-1 text-base border-2 rounded-full dark:text-gray-100 text-blue-800 dark:border-gray-100 border-blue-800 text-center dark:hover:bg-gray-100 dark:hover:text-gray-800 hover:bg-blue-800 hover:border-white hover:text-white md:text-base mb-4 mr-4"
             >
               Visit
             </a>

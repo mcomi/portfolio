@@ -15,6 +15,18 @@ export const websites = [
     image: "/images/websites/kosmos-cover.jpg",
     tags: ["HTML", "CSS", "Javascript"],
     source: null,
-    visit: "https://nenesgym.edu.mx/",
+    visit: "https://kosmos.la/",
+  },
+];
+
+export const demos = [
+  {
+    title: "Gatsby + Stripe Demo",
+    description:
+      "Basic e-commerce app build with Gatsby and integrated with Stripe API for payments",
+    image: "/images/websites/gatsby-demo-cover.jpg",
+    tags: ["Gatsby", "GraphQL", "Styled Components", "Stripe API"],
+    source: "https://github.com/mcomi/gatsby-shop",
+    visit: "https://gatsby-demo-stripe.netlify.app/",
   },
 ];

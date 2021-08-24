@@ -14,7 +14,7 @@ module.exports = {
         64: "31.25rem",
       },
       minHeight: {
-        25: "25rem",
+        25: "24rem",
       },
 
       typography: (theme) => ({
