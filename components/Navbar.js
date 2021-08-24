@@ -207,29 +207,39 @@ export default function Navbar({ colorTheme, setTheme }) {
           </div>
         </div>
       </div>
-      <div className={isActive ? "flex" : "hidden"}>
-        <ul className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <Link href="/demos">
-            <a className="block px-3 py-2 rounded-md text-base font-thin tracking-wider hover:text-blue-600 mr-4">
-              Demos
-            </a>
-          </Link>
-          <Link href="/websites">
-            <a className="block px-3 py-2 rounded-md text-base font-thin tracking-wider hover:text-blue-600 mr-4">
-              Websites
-            </a>
-          </Link>
-          <Link href="/articles">
-            <a className="block px-3 py-2 rounded-md text-base font-thin tracking-wider hover:text-blue-600">
-              Articles
-            </a>
-          </Link>
-          <Link href="/snippets">
-            <a className="block px-3 py-2 rounded-md text-base font-thin tracking-wider hover:text-blue-600">
-              Snippets
-            </a>
-          </Link>
-        </ul>
+      <div
+        className={`fixed mt-16 z-40 inset-0 flex-none h-full dark:bg-gray-900 bg-opacity-25 w-full bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block ${
+          isActive ? "" : "hidden"
+        }`}
+      >
+        <div class="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 bg-gray-100 dark:bg-gray-900 lg:text-lg pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)">
+          <div class="space-y-8 text-sm">
+            <div class="space-y-2">
+              <ul class="flex flex-col space-y-1">
+                <Link href="/demos">
+                  <a className="block px-3 py-2 rounded-md text-base font-thin tracking-wider hover:text-blue-600 mr-4">
+                    Demos
+                  </a>
+                </Link>
+                <Link href="/websites">
+                  <a className="block px-3 py-2 rounded-md text-base font-thin tracking-wider hover:text-blue-600 mr-4">
+                    Websites
+                  </a>
+                </Link>
+                <Link href="/articles">
+                  <a className="block px-3 py-2 rounded-md text-base font-thin tracking-wider hover:text-blue-600">
+                    Articles
+                  </a>
+                </Link>
+                <Link href="/snippets">
+                  <a className="block px-3 py-2 rounded-md text-base font-thin tracking-wider hover:text-blue-600">
+                    Snippets
+                  </a>
+                </Link>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
   );
