@@ -6,22 +6,6 @@ import Head from "next/head";
 import { motion } from "framer-motion";
 
 export default function Layout({ children, key }) {
-  const { theme, setTheme } = useTheme();
-
-  const dark = theme === "dark" ? true : false;
-
-  const [checked, setChecked] = useState(dark);
-  const [mounted, setMounted] = useState(false);
-
-  // When mounted on client, now we can show the UI
-  useEffect(() => setMounted(true), []);
-
-  useEffect(() => {
-    setTheme(checked ? "dark" : "light");
-  }, [checked, setTheme]);
-
-  if (!mounted) return null;
-
   const variants = {
     hidden: { opacity: 0, x: -200, y: 0 },
     enter: { opacity: 1, x: 0, y: 0 },

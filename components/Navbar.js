@@ -1,15 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Transition } from "@headlessui/react";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
-export default function Navbar({ colorTheme, setTheme }) {
+export default function Navbar() {
+  const { theme, setTheme } = useTheme();
+
+  const dark = theme === "dark" ? true : false;
+
+  const [checked, setChecked] = useState(dark);
+  const [mounted, setMounted] = useState(false);
+
   const [isActive, setActive] = useState(false);
 
   const handleActiveMenu = () => {
     setActive(!isActive);
   };
+
+  // When mounted on client, now we can show the UI
+  useEffect(() => setMounted(true), []);
+
+  useEffect(() => {
+    setTheme(checked ? "dark" : "light");
+  }, [checked, setTheme]);
+
+  if (!mounted) return null;
+
   return (
-    <nav className="w-full">
+    <nav className="w-full dark:bg-gray-900 bg-gray-100">
       <div className="max-w-6xl mx-auto">
         <div className="flex text-center items-center justify-between p-6 w-full">
           <div className="w-full flex items-center justify-between">
@@ -36,7 +54,7 @@ export default function Navbar({ colorTheme, setTheme }) {
               </a>
             </Link>
             <div className="-mr-2 flex md:hidden">
-              {colorTheme === "dark" ? (
+              {theme === "dark" ? (
                 <div
                   className="flex items-center mr-4 cursor-pointer"
                   onClick={() => setTheme("light")}
@@ -116,7 +134,7 @@ export default function Navbar({ colorTheme, setTheme }) {
                   </a>
                 </Link>
               </div>
-              {colorTheme === "dark" ? (
+              {theme === "dark" ? (
                 <div
                   className="flex  items-center mr-2 cursor-pointer"
                   onClick={() => setTheme("light")}
