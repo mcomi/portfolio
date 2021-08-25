@@ -41,11 +41,25 @@ export const demos = [
     technical: [
       "Automatize server process for build and deploy changes with docker",
       "Configure FTP Server for designers to update page",
-      "Docker configuration for building am nginx server with the page updates",
+      "Docker configuration for building an nginx server with the page updates",
     ],
     image: "/images/websites/eventos-film-cover.jpg",
     tags: ["Docker", "Linux Deamons", "Tailwind CSS"],
     source: "",
     visit: "https://eventos.filmoteca.unam.mx/",
+  },
+  {
+    title: "Filmoramas",
+    description:
+      "Online interactive memory games as an activity for the 60th Filmoteca's UNAM anniversary during pandemic",
+    technical: [
+      "CSS animations for the interaction of the cards",
+      "NodeJS API with MySQL to storage different games, users and ranking table",
+      "Docker configuration for building an nginx server with the page updates",
+    ],
+    image: "/images/websites/filmorama-cover.jpg",
+    tags: ["NodeJS", "CSS", "Javascript", "JQuery", "MySQL"],
+    source: null,
+    visit: "https://reto.filmoteca.unam.mx/",
   },
 ];
