@@ -48,6 +48,7 @@ export default function Card({
             <h1 className="block transition-all duration-500 ease-in-out dark:text-gray-200 text-gray-800 dark:group-hover:text-gray-100 group-hover:text-blue-600 font-semibold mb-2 text-base md:text-base lg:text-lg">
               {title}
             </h1>
+
             <div className="text-gray-600 dark:text-gray-300 leading-relaxed block text-sm md:text-xs lg:text-sm">
               {description}
             </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Card from "../components/Card";
+import DemoCard from "../components/DemoCard";
 import { demos } from "../constants/constants";
 
 export default function Demos() {
@@ -17,9 +17,9 @@ export default function Demos() {
             some demos I have worked
           </span>
         </div>
-        <div className="grid lg:grid-cols-3 2xl:grid-cols-4 grid-cols-1 gap-10 antialiased mb-4">
+        <div className="grid 3xl:grid-cols-2 grid-cols-1 gap-10 w-4/5 mx-auto antialiased mb-4">
           {demos.map((demo, index) => {
-            return <Card key={demo.title + index} {...demo} />;
+            return <DemoCard key={demo.title + index} {...demo} />;
           })}
         </div>
       </div>
