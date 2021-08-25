@@ -13,7 +13,7 @@ export default function DemoCard({
   return (
     <div className="">
       <div
-        className="relative rounded-lg block md:flex items-center bg-gray-100 shadow-xl"
+        className="group relative rounded-lg block md:flex items-center dark:bg-gray-800 bg-gray-100 shadow-xl"
         style={{ minHeight: "22rem" }}
       >
         <div
@@ -27,15 +27,15 @@ export default function DemoCard({
             objectFit="cover"
             alt={title}
           />
-          <div className="absolute inset-0 w-full h-full bg-blue-900 opacity-75"></div>
-          <div className="absolute inset-0 w-full h-full flex items-center justify-center fill-current text-white text-2xl font-bold">
+          <div className="absolute inset-0 w-full h-full bg-gray-900 dark:bg-gray-100 opacity-90 group-hover:opacity-30 transition-opacity duration-1000 ease-out"></div>
+          <div className="absolute inset-0 w-full h-full flex items-center justify-center fill-current dark:text-gray-900 text-white text-2xl font-bold">
             {title}
           </div>
         </div>
-        <div className="w-full md:w-3/5 h-full flex items-center bg-gray-100 rounded-lg">
+        <div className="w-full md:w-3/5 h-full flex items-center dark:bg-gray-800 bg-gray-100 rounded-lg">
           <div className="p-8 md:pr-16 md:pl-10 md:py-8">
             <h3 className="font-bold my-2">Description</h3>
-            <p className="text-gray-900 text-sm">{description}</p>
+            <p className="text-sm">{description}</p>
             <h3 className="font-bold my-2">Technical details</h3>
             <div className="inline-flex">
               <ul className="list-none md:list-disc">
@@ -54,7 +54,7 @@ export default function DemoCard({
             </a>
           </div>
           <svg
-            className="hidden md:block absolute inset-y-0 h-full w-24 fill-current text-gray-100 -ml-12"
+            className="hidden md:block absolute inset-y-0 h-full w-24 fill-current dark:text-gray-800 text-gray-100 -ml-12"
             viewBox="0 0 100 100"
             preserveAspectRatio="none"
           >
