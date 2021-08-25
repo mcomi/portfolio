@@ -28,13 +28,13 @@ export default function ScrollToTop() {
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
   return (
-    <div className="fixed z-30 bottom-4 left-4 lg:left-auto lg:right-4">
+    <div className="fixed z-20 bottom-4 left-4 lg:left-auto lg:right-4">
       {isVisible && (
         <button
-          className="w-16 h-16 rounded-full bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900"
+          className="w-16 h-16 z-20 rounded-full bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900"
           onClick={scrollToTop}
         >
-          <span class="hidden">Back to top</span>
+          <span className="hidden">Back to top</span>
           <svg
             className="absolute top-1/2 left-1/2 -mt-3 -ml-3 w-6 h-6"
             fill="none"

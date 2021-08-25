@@ -40,8 +40,13 @@ export default function DemoCard({
             <div className="inline-flex">
               <ul className="list-none md:list-disc">
                 {technical &&
-                  technical.map((item) => (
-                    <li className="mr-auto text-sm text-left">{item}</li>
+                  technical.map((item, index) => (
+                    <li
+                      key={item + index}
+                      className="mr-auto text-sm text-left"
+                    >
+                      {item}
+                    </li>
                   ))}
               </ul>
             </div>

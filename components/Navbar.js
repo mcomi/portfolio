@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { Transition } from "@headlessui/react";
 import Link from "next/link";
 
 export default function Navbar({ colorTheme, setTheme }) {
   const [isActive, setActive] = useState(false);
 
-  const ToggleClass = () => {
+  const handleActiveMenu = () => {
     setActive(!isActive);
   };
   return (
@@ -12,7 +13,7 @@ export default function Navbar({ colorTheme, setTheme }) {
       <div className="max-w-6xl mx-auto">
         <div className="flex text-center items-center justify-between p-6 w-full">
           <div className="w-full flex items-center justify-between">
-            <Link href="/" class="flex-shrink-0">
+            <Link href="/" className="flex-shrink-0">
               <a className="flex  dark:text-white text-gray-800 hover:text-blue-600">
                 <svg
                   className="w-6 h-6"
@@ -78,7 +79,7 @@ export default function Navbar({ colorTheme, setTheme }) {
               )}
               <button
                 className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-blue-600 hover:border-white"
-                onClick={ToggleClass}
+                onClick={handleActiveMenu}
                 aria-controls="mobile-menu"
               >
                 <svg
@@ -207,40 +208,74 @@ export default function Navbar({ colorTheme, setTheme }) {
           </div>
         </div>
       </div>
-      <div
-        className={`fixed mt-16 z-40 inset-0 flex-none h-full dark:bg-gray-900 bg-opacity-25 w-full bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 ${
-          isActive ? "" : "hidden"
-        }`}
+      <Transition
+        show={isActive}
+        enter="transition transform ease-out duration-300"
+        enterFrom="opacity-0 transform scale-90"
+        enterTo="opacity-100 transform scale-100"
+        leave="transition ease-in duration-500"
+        leaveFrom="opacity-100 transform scale-100"
+        leaveTo="opacity-0 transform scale-90"
+        className={`${
+          isActive ? "absolute block" : "relative hidden"
+        } mobile-nav p-8 top-0 left-0 bg-gray-900 z-50 h-screen w-full transform transition-all text-white absolute block`}
       >
-        <div class="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 bg-gray-100 dark:bg-gray-900 lg:text-lg pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)">
-          <div class="space-y-8 text-sm">
-            <div class="space-y-2">
-              <ul class="flex flex-col space-y-1">
-                <Link href="/demos">
-                  <a className="block px-3 py-2 rounded-md text-base font-thin tracking-wider hover:text-blue-600 mr-4">
-                    Demos
-                  </a>
-                </Link>
-                <Link href="/websites">
-                  <a className="block px-3 py-2 rounded-md text-base font-thin tracking-wider hover:text-blue-600 mr-4">
-                    Websites
-                  </a>
-                </Link>
-                <Link href="/articles">
-                  <a className="block px-3 py-2 rounded-md text-base font-thin tracking-wider hover:text-blue-600">
-                    Articles
-                  </a>
-                </Link>
-                <Link href="/snippets">
-                  <a className="block px-3 py-2 rounded-md text-base font-thin tracking-wider hover:text-blue-600">
-                    Snippets
-                  </a>
-                </Link>
-              </ul>
-            </div>
-          </div>
+        <div class="flex justify-end mb-4">
+          <button
+            class="border rounded-full p-3 h-12 w-12 flex items-center justify-center"
+            onClick={handleActiveMenu}
+          >
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
         </div>
-      </div>
+        <ul class="nav text-center flex flex-col justify-between items-center">
+          <Link href="/demos">
+            <a
+              onClick={handleActiveMenu}
+              className="px-3 rounded-md text-xl py-4 font-thin tracking-wider hover:text-blue-600"
+            >
+              Demos
+            </a>
+          </Link>
+          <Link href="/websites">
+            <a
+              onClick={handleActiveMenu}
+              className="px-3 rounded-md text-xl py-4 font-thin tracking-wider hover:text-blue-600"
+            >
+              Websites
+            </a>
+          </Link>
+          <Link href="/articles">
+            <a
+              onClick={handleActiveMenu}
+              className="px-3 rounded-md text-xl py-4 font-thin tracking-wider hover:text-blue-600"
+            >
+              Articles
+            </a>
+          </Link>
+          <Link href="/snippets">
+            <a
+              onClick={handleActiveMenu}
+              className="px-3 rounded-md text-xl py-4 font-thin tracking-wider hover:text-blue-600"
+            >
+              Snippets
+            </a>
+          </Link>
+        </ul>
+      </Transition>
     </nav>
   );
 }

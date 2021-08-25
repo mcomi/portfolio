@@ -6,7 +6,7 @@ import {
   getAllSnippetsTitles,
 } from "../../lib/snippets";
 import { markdownToHtml } from "../../lib/markdown";
-import ItemsNav from "../../components/ItemsNav";
+import ArticlesNav from "../../components/ArticlesNav";
 
 export default function Snippet({
   meta,
@@ -28,11 +28,11 @@ export default function Snippet({
           }`}
         >
           <nav class="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 bg-gray-100 dark:bg-gray-900 lg:text-lg pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)">
-            <h2 class="pt-4 text-sm lg:text-lg font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
-              Snippets Menu
+            <h2 class="pt-4 text-lg lg:text-lg font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
+              More snippets
             </h2>
             <div class="space-y-4">
-              <ItemsNav
+              <ArticlesNav
                 section="snippets"
                 slugs={snippetsSlugs}
                 titles={snippetsTitles}
@@ -47,7 +47,7 @@ export default function Snippet({
       </div>
       <button
         type="button"
-        class="fixed z-50 bottom-4 right-4 w-16 h-16 rounded-full bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 block lg:hidden"
+        class="fixed z-40 bottom-4 right-4 w-16 h-16 rounded-full bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 block lg:hidden"
         onClick={showNavigation}
       >
         <span class="sr-only">Open docs navigation</span>

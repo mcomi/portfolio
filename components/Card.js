@@ -56,7 +56,10 @@ export default function Card({
           <div className="flex flex-wrap justify-evenly gap-2 mt-8">
             {tags.map((tag) => {
               return (
-                <div class="bg-gray-200 py-1 px-2 mr-2 rounded-full text-xs text-gray-700">
+                <div
+                  key={tag}
+                  className="bg-gray-200 py-1 px-2 mr-2 rounded-full text-xs text-gray-700"
+                >
                   {tag}
                 </div>
               );
@@ -67,7 +70,7 @@ export default function Card({
               <a
                 href={source}
                 target="_blank"
-                class="px-6 py-1 text-base border-2 rounded-full dark:text-gray-100 text-blue-800 dark:border-gray-100 border-blue-800 text-center dark:hover:bg-gray-100 dark:hover:text-gray-800 hover:bg-blue-800 hover:border-white hover:text-white md:text-base mb-4 mr-4"
+                className="px-6 py-1 text-base border-2 rounded-full dark:text-gray-100 text-blue-800 dark:border-gray-100 border-blue-800 text-center dark:hover:bg-gray-100 dark:hover:text-gray-800 hover:bg-blue-800 hover:border-white hover:text-white md:text-base mb-4 mr-4"
               >
                 Code
               </a>
@@ -75,7 +78,7 @@ export default function Card({
             <a
               href={visit}
               target="_blank"
-              class="px-6 py-1 text-base border-2 rounded-full dark:text-gray-100 text-blue-800 dark:border-gray-100 border-blue-800 text-center dark:hover:bg-gray-100 dark:hover:text-gray-800 hover:bg-blue-800 hover:border-white hover:text-white md:text-base mb-4 mr-4"
+              className="px-6 py-1 text-base border-2 rounded-full dark:text-gray-100 text-blue-800 dark:border-gray-100 border-blue-800 text-center dark:hover:bg-gray-100 dark:hover:text-gray-800 hover:bg-blue-800 hover:border-white hover:text-white md:text-base mb-4 mr-4"
             >
               Visit
             </a>
