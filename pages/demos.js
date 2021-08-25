@@ -17,7 +17,7 @@ export default function Demos() {
             some demos I have worked
           </span>
         </div>
-        <div className="grid 3xl:grid-cols-2 grid-cols-1 gap-10 w-4/5 mx-auto antialiased mb-8">
+        <div className="grid 3xl:grid-cols-2 grid-cols-1 gap-10 w-full md:w-4/5 mx-auto antialiased mb-8">
           {demos.map((demo, index) => {
             return <DemoCard key={demo.title + index} {...demo} />;
           })}
