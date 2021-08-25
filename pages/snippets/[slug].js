@@ -7,6 +7,7 @@ import {
 } from "../../lib/snippets";
 import { markdownToHtml } from "../../lib/markdown";
 import ArticlesNav from "../../components/ArticlesNav";
+import Layout from "../../components/Layout";
 
 export default function Snippet({
   meta,
@@ -19,7 +20,7 @@ export default function Snippet({
     setMenuActive(!menuActive);
   };
   return (
-    <>
+    <Layout>
       <div id="skip" class="flex">
         <aside
           id="docs-menu"
@@ -99,7 +100,7 @@ export default function Snippet({
           </>
         )}
       </button>
-    </>
+    </Layout>
   );
 }
 

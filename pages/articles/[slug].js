@@ -7,6 +7,7 @@ import {
 } from "../../lib/docs";
 import { markdownToHtml } from "../../lib/markdown";
 import ArticlesNav from "../../components/ArticlesNav";
+import Layout from "../../components/Layout";
 
 export default function Doc({ meta, content, guidesSlugs, guidesTitles }) {
   const [menuActive, setMenuActive] = useState(false);
@@ -14,7 +15,7 @@ export default function Doc({ meta, content, guidesSlugs, guidesTitles }) {
     setMenuActive(!menuActive);
   };
   return (
-    <>
+    <Layout>
       <div id="skip" class="flex">
         <aside
           id="docs-menu"
@@ -44,7 +45,7 @@ export default function Doc({ meta, content, guidesSlugs, guidesTitles }) {
       </div>
       <button
         type="button"
-        class="fixed z-20 bottom-4 right-4 w-16 h-16 rounded-full bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 block lg:hidden"
+        class="fixed z-40 bottom-4 right-4 w-16 h-16 rounded-full bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 block lg:hidden"
         onClick={showNavigation}
       >
         <span class="sr-only">Open docs navigation</span>
@@ -96,7 +97,7 @@ export default function Doc({ meta, content, guidesSlugs, guidesTitles }) {
           </>
         )}
       </button>
-    </>
+    </Layout>
   );
 }
 

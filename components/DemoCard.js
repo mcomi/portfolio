@@ -28,14 +28,14 @@ export default function DemoCard({
             alt={title}
           />
           <div className="absolute inset-0 w-full h-full bg-gray-900 dark:bg-gray-100 opacity-90 group-hover:opacity-30 transition-opacity duration-1000 ease-out"></div>
-          <div className="absolute inset-0 w-full h-full flex items-center justify-center fill-current dark:text-gray-900 text-white text-2xl font-bold">
+          <div className="absolute inset-0 px-3 w-full h-full flex items-center justify-center fill-current dark:text-gray-900 text-white text-2xl font-bold">
             {title}
           </div>
         </div>
         <div className="w-full md:w-3/5 h-full flex items-center dark:bg-gray-800 bg-gray-100 rounded-lg">
           <div className="p-8 md:pr-16 md:pl-10 md:py-8">
             <h3 className="font-bold my-2">Description</h3>
-            <p className="text-sm">{description}</p>
+            <p className="md:text-sm">{description}</p>
             <h3 className="font-bold my-2">Technical details</h3>
             <div className="inline-flex">
               <ul className="list-none md:list-disc">
@@ -43,7 +43,7 @@ export default function DemoCard({
                   technical.map((item, index) => (
                     <li
                       key={item + index}
-                      className="mr-auto text-sm text-left"
+                      className="mr-auto md:text-sm leading-5 text-left"
                     >
                       {item}
                     </li>
@@ -51,7 +51,7 @@ export default function DemoCard({
               </ul>
             </div>
             <a
-              className="ml-auto flex items-baseline mt-3 text-indigo-600 hover:text-indigo-900 focus:text-indigo-900"
+              className="ml-auto flex items-baseline mt-3 text-blue-600 hover:text-blue-900 focus:text-blue-900"
               href={visit}
             >
               <span>Go to demo</span>

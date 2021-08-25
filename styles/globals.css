@@ -69,3 +69,8 @@ pre.line-numbers > code {
   padding-right: 0.8em;
   text-align: right;
 }
+
+p,
+ul > li {
+  @apply font-light tracking-wider;
+}

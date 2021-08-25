@@ -218,7 +218,7 @@ export default function Navbar({ colorTheme, setTheme }) {
         leaveTo="opacity-0 transform scale-90"
         className={`${
           isActive ? "absolute block" : "relative hidden"
-        } mobile-nav p-8 top-0 left-0 bg-gray-900 z-50 h-screen w-full transform transition-all text-white absolute block`}
+        } mobile-nav p-8 top-0 left-0 bg-gray-100 dark:bg-gray-900 z-50 h-screen w-full transform transition-all dark:text-white absolute block`}
       >
         <div class="flex justify-end mb-4">
           <button
