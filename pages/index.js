@@ -21,7 +21,7 @@ export default function Home() {
         />
       </Head>
       <Layout>
-        <div class="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto">
           <div className="w-32 lg:w-56 mx-auto">
             <Image src={icon}></Image>
           </div>

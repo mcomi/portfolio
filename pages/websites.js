@@ -13,9 +13,11 @@ export default function Websites() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <div class="flex flex-col justify-around uppercase max-w-3/5 pb-7">
-          <h1 class="text-lg pb-4 text-gray-400 tracking-wider">Websites</h1>
-          <span class="text-2xl font-bold tracking-widest">
+        <div className="flex flex-col justify-around uppercase max-w-3/5 pb-7">
+          <h1 className="text-lg pb-4 text-gray-400 tracking-wider">
+            Websites
+          </h1>
+          <span className="text-2xl font-bold tracking-widest">
             what i have done?
           </span>
         </div>

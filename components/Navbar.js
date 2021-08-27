@@ -238,13 +238,13 @@ export default function Navbar() {
           isActive ? "absolute block" : "relative hidden"
         } mobile-nav p-8 top-0 left-0 bg-gray-100 dark:bg-gray-900 z-50 h-screen w-full transform transition-all dark:text-white absolute block`}
       >
-        <div class="flex justify-end mb-4">
+        <div className="flex justify-end mb-4">
           <button
-            class="border rounded-full p-3 h-12 w-12 flex items-center justify-center"
+            className="border rounded-full p-3 h-12 w-12 flex items-center justify-center"
             onClick={handleActiveMenu}
           >
             <svg
-              class="w-8 h-8"
+              className="w-8 h-8"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -259,7 +259,7 @@ export default function Navbar() {
             </svg>
           </button>
         </div>
-        <ul class="nav text-center flex flex-col justify-between items-center">
+        <ul className="nav text-center flex flex-col justify-between items-center">
           <Link href="/demos">
             <a
               onClick={handleActiveMenu}

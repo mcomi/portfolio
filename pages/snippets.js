@@ -1,11 +1,11 @@
 import Head from "next/head";
 import Navbar from "../components/Navbar";
-import ArticlesNav from "../components/ArticlesNav";
+import SnippetCard from "../components/SnippetCard";
 import Layout from "../components/Layout";
 
-import { getAllSnippetsSlugs, getAllSnippetsTitles } from "../lib/snippets";
+import { getAllSnippets } from "../lib/snippets";
 
-export default function Snippets({ snippetsSlugs, snippetsTitles }) {
+export default function Snippets({ snippets }) {
   return (
     <>
       <Head>
@@ -22,13 +22,25 @@ export default function Snippets({ snippetsSlugs, snippetsTitles }) {
           </p>
         </div>
         <div className="w-full max-w-3xl mx-auto mt-6 sm:w-full">
-          <h2 class="pt-4 text-sm lg:text-lg font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
+          <h2 className="pt-4 text-sm lg:text-lg font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
             Menu
           </h2>
-          <ArticlesNav
-            section="snippets"
-            slugs={snippetsSlugs}
-            titles={snippetsTitles}
+        </div>
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full max-w-3xl mx-auto mt-4">
+          {snippets.map((snippet) => (
+            <SnippetCard
+              key={snippet.slug}
+              title={snippet.title}
+              slug={snippet.slug}
+              logo={snippet.logo}
+              description={snippet.description}
+            />
+          ))}
+          <SnippetCard
+            title="Adding more"
+            slug="/snippets"
+            description="Adding more each day.."
+            logo="react.png"
           />
         </div>
       </Layout>
@@ -37,13 +49,11 @@ export default function Snippets({ snippetsSlugs, snippetsTitles }) {
 }
 
 export async function getStaticProps() {
-  const snippetsSlugs = getAllSnippetsSlugs();
-  const snippetsTitles = getAllSnippetsTitles();
+  const snippets = getAllSnippets();
 
   return {
     props: {
-      snippetsSlugs,
-      snippetsTitles,
+      snippets,
     },
   };
 }

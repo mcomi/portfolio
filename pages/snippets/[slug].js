@@ -1,42 +1,32 @@
 import React, { useState } from "react";
-import {
-  getAllSnippets,
-  getSnippetBySlug,
-  getAllSnippetsSlugs,
-  getAllSnippetsTitles,
-} from "../../lib/snippets";
+import { getAllSnippets, getSnippetBySlug } from "../../lib/snippets";
 import { markdownToHtml } from "../../lib/markdown";
 import ArticlesNav from "../../components/ArticlesNav";
 import Layout from "../../components/Layout";
 
-export default function Snippet({
-  meta,
-  content,
-  snippetsSlugs,
-  snippetsTitles,
-}) {
+export default function Snippet({ meta, content, snippets }) {
   const [menuActive, setMenuActive] = useState(false);
   const showNavigation = () => {
     setMenuActive(!menuActive);
   };
   return (
     <Layout>
-      <div id="skip" class="flex">
+      <div id="skip" className="flex">
         <aside
           id="docs-menu"
-          class={`fixed z-40 inset-0 flex-none h-full dark:bg-gray-900 bg-opacity-25 w-full bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block ${
+          className={`fixed z-40 inset-0 flex-none h-full dark:bg-gray-900 bg-opacity-25 w-full bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block ${
             menuActive ? "" : "hidden"
           }`}
         >
-          <nav class="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 bg-gray-100 dark:bg-gray-900 lg:text-lg pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)">
-            <h2 class="pt-4 text-lg lg:text-lg font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
+          <nav className="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 bg-gray-100 dark:bg-gray-900 lg:text-lg pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)">
+            <h2 className="pt-4 text-lg lg:text-lg font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
               More snippets
             </h2>
-            <div class="space-y-4">
+            <div className="space-y-4">
               <ArticlesNav
                 section="snippets"
-                slugs={snippetsSlugs}
-                titles={snippetsTitles}
+                slugs={snippets.map((snippet) => snippet.slug)}
+                titles={snippets.map((snippet) => snippet.title)}
               />
             </div>
           </nav>
@@ -48,10 +38,10 @@ export default function Snippet({
       </div>
       <button
         type="button"
-        class="fixed z-40 bottom-4 right-4 w-16 h-16 rounded-full bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 block lg:hidden"
+        className="fixed z-40 bottom-4 right-4 w-16 h-16 rounded-full bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 block lg:hidden"
         onClick={showNavigation}
       >
-        <span class="sr-only">Open docs navigation</span>
+        <span className="sr-only">Open docs navigation</span>
         {menuActive ? (
           <svg
             className="absolute top-1/2 left-1/2 -mt-3 -ml-3 transition duration-300 transform w-6 h-6"
@@ -87,7 +77,7 @@ export default function Snippet({
               width="24"
               height="24"
               fill="none"
-              class="absolute top-1/2 left-1/2 -mt-3 -ml-3 transition duration-300 transform opacity-0 scale-80"
+              className="absolute top-1/2 left-1/2 -mt-3 -ml-3 transition duration-300 transform opacity-0 scale-80"
             >
               <path
                 d="M6 18L18 6M6 6l12 12"
@@ -107,14 +97,12 @@ export default function Snippet({
 export async function getStaticProps({ params }) {
   const snippet = getSnippetBySlug(params.slug);
   const content = await markdownToHtml(snippet.content || "");
-  const snippetsSlugs = getAllSnippetsSlugs();
-  const snippetsTitles = getAllSnippetsTitles();
+  const snippets = getAllSnippets();
   return {
     props: {
       ...snippet,
       content,
-      snippetsSlugs,
-      snippetsTitles,
+      snippets,
     },
   };
 }

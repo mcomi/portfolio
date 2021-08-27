@@ -1,6 +1,6 @@
 ---
-title: 'Prism with Next.js'
-description: 'Example using Prism / Markdown with Next.js including switching syntax highlighting themes.'
+title: "Prism with Next.js"
+description: "Example using Prism / Markdown with Next.js including switching syntax highlighting themes."
 ---
 
 # Using Prism with Next.js
@@ -16,15 +16,15 @@ We can retrieve that file's contents using `getDocBySlug('my-post')`.
 ```js
 // lib/docs.js
 
-import fs from 'fs';
-import { join } from 'path';
-import matter from 'gray-matter';
+import fs from "fs";
+import { join } from "path";
+import matter from "gray-matter";
 
 export function getDocBySlug(slug) {
-  const realSlug = slug.replace(/\.md$/, '');
-  const docsDirectory = join(process.cwd(), 'docs');
+  const realSlug = slug.replace(/\.md$/, "");
+  const docsDirectory = join(process.cwd(), "docs");
   const fullPath = join(docsDirectory, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
   return { slug: realSlug, meta: data, content };
@@ -36,9 +36,9 @@ Then, we can **transform** the raw Markdown into HTML using [remark](https://git
 ```js
 // lib/markdown.js
 
-import remark from 'remark';
-import html from 'remark-html';
-import prism from 'remark-prism';
+import remark from "remark";
+import html from "remark-html";
+import prism from "remark-prism";
 
 export default async function markdownToHtml(markdown) {
   const result = await remark().use(html).use(prism).process(markdown);
@@ -51,8 +51,8 @@ would convert a Markdown file like this:
 
 ````markdown
 ---
-title: 'My First Post'
-description: 'My very first blog post'
+title: "My First Post"
+description: "My very first blog post"
 ---
 
 # My First Post
@@ -69,10 +69,10 @@ into this HTML, which includes the proper elements and class names.
 ```html
 <h1>My First Post</h1>
 <p>I <strong>love</strong> using <a href="https://nextjs.org/">Next.js</a></p>
-<div class="remark-highlight">
-  <pre class="language-js">
+<div className="remark-highlight">
+  <pre className="language-js">
     <code>
-      <span class="token keyword">const</span> doc <span class="token operator">=</span> <span class="token function">getDocBySlug</span><span class="token punctuation">(</span>params<span class="token punctuation">.</span><span class="token property-access">slug</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span className="token keyword">const</span> doc <span className="token operator">=</span> <span className="token function">getDocBySlug</span><span className="token punctuation">(</span>params<span className="token punctuation">.</span><span className="token property-access">slug</span><span className="token punctuation">)</span><span className="token punctuation">;</span>
     </code>
   </pre>
 </div>
