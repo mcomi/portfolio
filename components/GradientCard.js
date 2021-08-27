@@ -12,7 +12,7 @@ export default function GradientCard({ title, description, image, tone, url }) {
   return (
     <NextLink href={url}>
       <div
-        className={`bg-gradient-to-br ${toneGradients[tone]} p-8 rounded-md`}
+        className={`bg-gradient-to-br ${toneGradients[tone]} p-8 rounded-md transform hover:rotate-2 hover:scale-95 cursor-pointer`}
       >
         <h3 className="text-2xl font-bold text-left mt-1 text-gray-100">
           {title}
