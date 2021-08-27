@@ -12,7 +12,7 @@ export default function SnippetCard({
   return (
     <Link href={`/snippets/${slug}`}>
       <a
-        className="border dark:border-gray-200 border-gray-900 rounded p-4 w-full text-left"
+        className="border  dark:border-gray-200 border-gray-900 rounded p-4 w-full text-left"
         {...rest}
       >
         <Image

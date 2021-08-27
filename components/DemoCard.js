@@ -33,7 +33,7 @@ export default function DemoCard({
           </div>
         </div>
         <div className="w-full md:w-3/5 h-full flex items-center dark:bg-gray-800 bg-gray-100 rounded-lg">
-          <div className="p-8 md:pr-16 md:pl-10 md:py-8">
+          <div className="p-8 md:pr-8 md:pl-10 md:py-8">
             <h3 className="font-bold my-2">Description</h3>
             <p className="md:text-sm">{description}</p>
             <h3 className="font-bold my-2">Technical details</h3>

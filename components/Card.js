@@ -28,7 +28,7 @@ export default function Card({
       ? Buffer.from(str).toString("base64")
       : window.btoa(str);
   return (
-    <div className="p-4 max-w-sm">
+    <div className="max-w-sm">
       <div className="group transform transition-all duration-500 ease-in-out hover:scale-105 bg-white dark:bg-gray-800 rounded-lg shadow-xl flex flex-col">
         <div className="min-h-25 relative">
           <Image
@@ -53,7 +53,7 @@ export default function Card({
               {description}
             </div>
           </div>
-          <div className="flex flex-wrap justify-evenly gap-2 mt-8">
+          <div className="flex flex-wrap justify-evenly gap-2 mt-5">
             {tags.map((tag) => {
               return (
                 <div

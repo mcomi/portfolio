@@ -2,6 +2,7 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Layout from "../components/Layout";
 import Image from "next/image";
+import GradientCard from "../components/GradientCard";
 import icon from "../assets/developer.png";
 
 export default function Home() {
@@ -21,7 +22,7 @@ export default function Home() {
         />
       </Head>
       <Layout>
-        <div className="max-w-2xl mx-auto">
+        <div className="items-start max-w-2xl mx-auto mb-16">
           <div className="w-32 lg:w-56 mx-auto">
             <Image src={icon}></Image>
           </div>
@@ -51,6 +52,37 @@ export default function Home() {
             and some of the work I have done, as well as a guide of concepts and
             code snippets that have been useful during my learning process.
           </p>
+
+          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full max-w-3xl mx-auto mt-4">
+            <GradientCard
+              url="/projects"
+              title="Projects"
+              description="Checkout some of my projects."
+              tone="green"
+              image="projects.svg"
+            />
+            <GradientCard
+              url="/websites"
+              title="Websites"
+              description="Some websites I`ve build."
+              tone="blue"
+              image="websites.svg"
+            />
+            <GradientCard
+              url="/articles"
+              title="Articles"
+              description="Find some useful guides."
+              tone="yellow"
+              image="articles.svg"
+            />
+            <GradientCard
+              url="/snippets"
+              title="Snippets"
+              description="Small pieces of code that can help you."
+              tone="orange"
+              image="snippets.svg"
+            />
+          </div>
         </div>
       </Layout>
     </>

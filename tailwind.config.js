@@ -7,14 +7,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        dark: "#24283b",
+        cyan: "#22d3ee",
+        "light-blue": "#0ea5e9",
+        lime: "#bef264",
+        emerald: "#10b981",
+        orange: "#fb923c",
+        "orange-500": "#f97316",
+        "cyan-500": "#06b6d4",
       },
 
       maxHeight: {
         64: "31.25rem",
       },
       minHeight: {
-        25: "24rem",
+        25: "16rem",
       },
 
       typography: (theme) => ({

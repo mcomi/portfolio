@@ -25,7 +25,7 @@ export default function Layout({ children, key }) {
           rel="stylesheet"
         />
       </Head>
-      <div className="dark:bg-gray-900 dark:text-white flex flex-col items-center justify-center min-h-screen">
+      <div className="dark:bg-gray-900 dark:text-white flex flex-col justify-center min-h-screen">
         <motion.main
           key={key}
           initial="hidden"
@@ -33,7 +33,7 @@ export default function Layout({ children, key }) {
           exit="exit"
           variants={variants}
           transition={{ type: "linear" }}
-          className="leading-7 dark:text-white text-gray-800 flex flex-col justify-center w-full flex-1 lg:px-20 px-5 text-center"
+          className="leading-7 dark:text-white text-gray-800 w-full flex-1 lg:px-20 px-5"
         >
           {children}
         </motion.main>

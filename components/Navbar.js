@@ -113,9 +113,9 @@ export default function Navbar() {
 
             <div className="w-full hidden md:flex flex-grow items-center lg:w-auto">
               <div className="text-base md:flex-grow">
-                <Link href="/demos">
+                <Link href="/projects">
                   <a className="font-thin tracking-wider mt-4 inline-block lg:mt-0 text-teal-200 hover:font-semibold hover:scale-110 mr-4">
-                    Demos
+                    Projects
                   </a>
                 </Link>
                 <Link href="/websites">
@@ -260,12 +260,12 @@ export default function Navbar() {
           </button>
         </div>
         <ul className="nav text-center flex flex-col justify-between items-center">
-          <Link href="/demos">
+          <Link href="/projects">
             <a
               onClick={handleActiveMenu}
               className="px-3 rounded-md text-xl py-4 font-thin tracking-wider hover:text-blue-600"
             >
-              Demos
+              Projects
             </a>
           </Link>
           <Link href="/websites">
