@@ -1,7 +1,7 @@
 ---
 title: React Tag input field
 description: Input component to render a list of tags
-logo: react.png
+logo: react.svg
 ---
 
 ## Table of contents

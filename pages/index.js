@@ -26,12 +26,9 @@ export default function Home() {
           <div className="w-32 lg:w-56 mx-auto">
             <Image src={icon}></Image>
           </div>
-          <h1 className="text-2xl tracking-wider lg:text-4xl font-bold pb-5">
-            Hi, I'm{" "}
-            <a className="text-blue-600" href="https://nextjs.org">
-              Manuel
-            </a>
-            . Nice to meet you.
+          <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+            Hi, I'm <span className="text-blue-600">Manuel</span>. Nice to meet
+            you.
           </h1>
 
           <p className="lg:text-xl py-3">
@@ -42,10 +39,7 @@ export default function Home() {
             I'm specialized in leading software development and front-end
             technologies; and for the last 8 years I have been managing and
             leading a team of engineers at Filmoteca UNAM to develop
-            technological solutions. The most important one, a collection
-            management software to preserve film archives, which has been
-            recognized within UNAM as a high impact institutional software
-            project.
+            technological solutions.
           </p>
           <p className="lg:text-xl pt-3 pb-10">
             I put together this website to show my passion for web technologies

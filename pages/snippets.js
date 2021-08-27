@@ -18,8 +18,8 @@ export default function Snippets({ snippets }) {
           <SectionTitle title="Snippets" />
           <p className="lg:text-lg py-3">
             Reusable{" "}
-            <span class="bg-gray-100 border rounded-md px-1 py-0.5 tracking-tight dark:text-gray-300 dark:bg-gray-700">
-              code snippets
+            <span class="bg-gray-200 font-bold px-1 py-0.5 tracking-tight dark:text-gray-100 dark:bg-gray-700">
+              {"<code snippets />"}
             </span>{" "}
             that can be easily integrated in your application. You can navigate
             into some functions and code snippets which can be used on your
@@ -36,12 +36,6 @@ export default function Snippets({ snippets }) {
                 description={snippet.description}
               />
             ))}
-            <SnippetCard
-              title="Adding more"
-              slug="/snippets"
-              description="Adding more each day.."
-              logo="react.png"
-            />
           </div>
         </div>
       </Layout>

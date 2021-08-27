@@ -27,7 +27,7 @@ export default function DemoCard({
             objectFit="cover"
             alt={title}
           />
-          <div className="absolute inset-0 w-full h-full bg-gray-900 dark:bg-gray-100 opacity-90 group-hover:opacity-30 transition-opacity duration-1000 ease-out"></div>
+          <div className="absolute inset-0 w-full h-full bg-gray-900 dark:bg-gray-100 opacity-70 group-hover:opacity-30 transition-opacity duration-1000 ease-out"></div>
           <div className="absolute inset-0 px-3 w-full h-full flex items-center justify-center fill-current dark:text-gray-900 text-white text-2xl font-bold">
             {title}
           </div>

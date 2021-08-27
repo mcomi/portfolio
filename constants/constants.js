@@ -19,7 +19,23 @@ export const websites = [
   },
 ];
 
-export const demos = [
+export const projects = [
+  {
+    title: "CLAF",
+    description: `Stands for Logistical Control of the Film Archive and is a collection management software to 
+      preserve film archives. It is a private project but I show images and a presentation that was made in 2019 when 
+      it was recognized within UNAM as a software engineering project of high institutional impact.`,
+    technical: [
+      "Re-engineering of the film archive database model.",
+      "Java + Spring API secure with JWT",
+      "AngularJS Front end client",
+      "Among others.",
+    ],
+    image: "/images/websites/claf-cover.jpg",
+    tags: ["AngularJS", "Bootstrap", "API", "JWT", "Java", "Spring", "MySQL"],
+    source: null,
+    visit: "https://claf-conti-redis.netlify.app/",
+  },
   {
     title: "Gatsby + Stripe Demo",
     description:

@@ -1,7 +1,7 @@
 ---
 title: Javascript functions
 description: Useful Javascript code snippets for different projects
-logo: javascript.png
+logo: javascript.svg
 ---
 
 # Javascript
