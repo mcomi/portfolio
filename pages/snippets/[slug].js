@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getAllSnippets, getSnippetBySlug } from "../../lib/snippets";
+import { getDocBySlug, getAllDocs } from "../../lib/docs";
 import { markdownToHtml } from "../../lib/markdown";
 import ArticlesNav from "../../components/ArticlesNav";
 import Layout from "../../components/Layout";
@@ -19,16 +19,14 @@ export default function Snippet({ meta, content, snippets }) {
           }`}
         >
           <nav className="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 bg-gray-100 dark:bg-gray-900 lg:text-lg pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)">
-            <h2 className="pt-4 text-lg lg:text-lg font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
+            <h2 className="pt-4 text-lg text-center lg:text-lg font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
               More snippets
             </h2>
-            <div className="space-y-4">
-              <ArticlesNav
-                section="snippets"
-                slugs={snippets.map((snippet) => snippet.slug)}
-                titles={snippets.map((snippet) => snippet.title)}
-              />
-            </div>
+            <ArticlesNav
+              section="snippets"
+              slugs={snippets.map((snippet) => snippet.slug)}
+              titles={snippets.map((snippet) => snippet.title)}
+            />
           </nav>
         </aside>
         <article
@@ -95,9 +93,9 @@ export default function Snippet({ meta, content, snippets }) {
 }
 
 export async function getStaticProps({ params }) {
-  const snippet = getSnippetBySlug(params.slug);
+  const snippet = getDocBySlug("snippets", params.slug);
   const content = await markdownToHtml(snippet.content || "");
-  const snippets = getAllSnippets();
+  const snippets = getAllDocs("snippets");
   return {
     props: {
       ...snippet,
@@ -108,7 +106,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const snippets = getAllSnippets();
+  const snippets = getAllDocs("snippets");
 
   return {
     paths: snippets.map((snippet) => {

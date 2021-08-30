@@ -14,11 +14,11 @@ export default function DemoCard({
     <div className="">
       <div
         className="group relative rounded-lg block md:flex items-center dark:bg-gray-800 bg-gray-100 shadow-xl"
-        style={{ minHeight: "22rem" }}
+        style={{ minHeight: "24rem" }}
       >
         <div
           className="relative w-full md:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg"
-          style={{ minHeight: "22rem" }}
+          style={{ minHeight: "25rem" }}
         >
           <Image
             className="w-full rounded-t-lg object-cover object-center"

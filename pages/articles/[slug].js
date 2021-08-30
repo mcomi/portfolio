@@ -1,15 +1,10 @@
 import React, { useState } from "react";
-import {
-  getAllDocs,
-  getDocBySlug,
-  getAllDocsSlugs,
-  getAllDocsTitles,
-} from "../../lib/docs";
+import { getAllDocs, getDocBySlug } from "../../lib/docs";
 import { markdownToHtml } from "../../lib/markdown";
 import ArticlesNav from "../../components/ArticlesNav";
 import Layout from "../../components/Layout";
 
-export default function Doc({ meta, content, guidesSlugs, guidesTitles }) {
+export default function Doc({ meta, content, slugs, docs }) {
   const [menuActive, setMenuActive] = useState(false);
   const showNavigation = () => {
     setMenuActive(!menuActive);
@@ -24,17 +19,15 @@ export default function Doc({ meta, content, guidesSlugs, guidesTitles }) {
           }`}
         >
           <nav className="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 bg-gray-100 dark:bg-gray-900 lg:text-lg pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)">
+            <h2 className="pt-4 text-sm text-center lg:text-lg font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
+              More articles
+            </h2>
             <div className="space-y-4">
-              <h2 className="pt-4 text-sm lg:text-lg font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
-                More articles
-              </h2>
-              <div className="space-y-4">
-                <ArticlesNav
-                  section="articles"
-                  slugs={guidesSlugs}
-                  titles={guidesTitles}
-                />
-              </div>
+              <ArticlesNav
+                section="snippets"
+                slugs={docs.map((doc) => doc.slug)}
+                titles={docs.map((doc) => doc.title)}
+              />
             </div>
           </nav>
         </aside>
@@ -102,22 +95,20 @@ export default function Doc({ meta, content, guidesSlugs, guidesTitles }) {
 }
 
 export async function getStaticProps({ params }) {
-  const doc = getDocBySlug(params.slug);
+  const doc = getDocBySlug("docs", params.slug);
   const content = await markdownToHtml(doc.content || "");
-  const guidesSlugs = getAllDocsSlugs();
-  const guidesTitles = getAllDocsTitles();
+  const docs = getAllDocs("docs");
   return {
     props: {
       ...doc,
       content,
-      guidesSlugs,
-      guidesTitles,
+      docs,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const docs = getAllDocs();
+  const docs = getAllDocs("docs");
 
   return {
     paths: docs.map((doc) => {

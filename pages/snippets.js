@@ -4,7 +4,7 @@ import SnippetCard from "../components/SnippetCard";
 import Layout from "../components/Layout";
 import Image from "next/image";
 
-import { getAllSnippets } from "../lib/snippets";
+import { getAllDocs } from "../lib/docs";
 
 export default function Snippets({ snippets }) {
   return (
@@ -44,7 +44,7 @@ export default function Snippets({ snippets }) {
 }
 
 export async function getStaticProps() {
-  const snippets = getAllSnippets();
+  const snippets = getAllDocs("snippets");
 
   return {
     props: {
