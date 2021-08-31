@@ -25,7 +25,7 @@ export default function Doc({ meta, content, slugs, docs }) {
             <div className="space-y-4">
               <ArticlesNav
                 handleClick={showNavigation}
-                section="snippets"
+                section="docs"
                 slugs={docs.map((doc) => doc.slug)}
                 titles={docs.map((doc) => doc.title)}
               />
