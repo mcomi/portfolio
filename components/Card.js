@@ -72,16 +72,18 @@ export default function Card({
                 target="_blank"
                 className="px-6 py-1 text-base border-2 rounded-full dark:text-gray-100 text-blue-800 dark:border-gray-100 border-blue-800 text-center dark:hover:bg-gray-100 dark:hover:text-gray-800 hover:bg-blue-800 hover:border-white hover:text-white md:text-base mb-4 mr-4"
               >
-                Code
+                My demo
               </a>
             )}
-            <a
-              href={visit}
-              target="_blank"
-              className="px-6 py-1 text-base border-2 rounded-full dark:text-gray-100 text-blue-800 dark:border-gray-100 border-blue-800 text-center dark:hover:bg-gray-100 dark:hover:text-gray-800 hover:bg-blue-800 hover:border-white hover:text-white md:text-base mb-4 mr-4"
-            >
-              Visit
-            </a>
+            {visit && (
+              <a
+                href={visit}
+                target="_blank"
+                className="px-6 py-1 text-base border-2 rounded-full dark:text-gray-100 text-blue-800 dark:border-gray-100 border-blue-800 text-center dark:hover:bg-gray-100 dark:hover:text-gray-800 hover:bg-blue-800 hover:border-white hover:text-white md:text-base mb-4 mr-4"
+              >
+                View online
+              </a>
+            )}
           </div>
         </div>
       </div>

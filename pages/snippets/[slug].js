@@ -14,11 +14,11 @@ export default function Snippet({ meta, content, snippets }) {
       <div id="skip" className="flex">
         <aside
           id="docs-menu"
-          className={`fixed z-40 inset-0 flex-none h-full dark:bg-gray-900 bg-opacity-25 w-full bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block ${
+          className={`fixed z-40 inset-0 flex-none h-full dark:bg-gray-900 w-full bg-gray-100 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 lg:block ${
             menuActive ? "" : "hidden"
           }`}
         >
-          <nav className="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 bg-gray-100 dark:bg-gray-900 lg:text-lg pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)">
+          <nav className="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 bg-gray-100 dark:bg-gray-900 lg:text-lg pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18) text-center md:text-left">
             <h2 className="pt-4 text-lg text-center lg:text-lg font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
               More snippets
             </h2>
