@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-export default function ArticlesNav({ section, slugs, titles }) {
+export default function ArticlesNav({ section, slugs, titles, handleClick }) {
   return (
     <div className="w-full p-6 sm:w-60 text-gray-800 dark:text-white mr-auto">
       <div className="space-y-8 text-sm">
@@ -10,7 +10,10 @@ export default function ArticlesNav({ section, slugs, titles }) {
             {slugs.map((slug, index) => {
               return (
                 <Link key={slug} href={`/${section}/${slug}`}>
-                  <a className="text-xl py-2 font-thin text-gray-700 dark:text-white">
+                  <a
+                    className="text-xl py-2 font-thin text-gray-700 dark:text-white"
+                    onClick={handleClick}
+                  >
                     {titles[index]}
                   </a>
                 </Link>

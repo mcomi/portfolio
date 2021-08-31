@@ -23,6 +23,7 @@ export default function Snippet({ meta, content, snippets }) {
               More snippets
             </h2>
             <ArticlesNav
+              handleCLick={showNavigation}
               section="snippets"
               slugs={snippets.map((snippet) => snippet.slug)}
               titles={snippets.map((snippet) => snippet.title)}
