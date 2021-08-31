@@ -9,17 +9,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Portfolio - Manuel Comi Xolot</title>
+        <title>Manuel Comi Xolot - Software Engineer</title>
         <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="preload"
-          href="https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css"
-          as="script"
-        />
-        <link
-          href={`https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css`}
-          rel="stylesheet"
-        />
       </Head>
       <Layout>
         <div className="items-start max-w-2xl mx-auto mb-16">
