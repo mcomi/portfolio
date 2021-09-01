@@ -41,7 +41,7 @@ export default function Layout(props) {
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
       </Head>
-      <div className="dark:bg-gray-900 dark:text-white flex flex-col justify-center min-h-screen">
+      <div className="flex flex-col justify-center min-h-screen">
         <motion.main
           key={key}
           initial="hidden"
@@ -49,7 +49,7 @@ export default function Layout(props) {
           exit="exit"
           variants={variants}
           transition={{ type: "linear" }}
-          className="leading-7 dark:text-white text-gray-800 w-full flex-1 lg:px-20 px-5"
+          className="leading-7 w-full flex-1 lg:px-20 px-5"
         >
           {children}
         </motion.main>

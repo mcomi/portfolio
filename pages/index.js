@@ -11,7 +11,7 @@ export default function Home() {
         <div className="hidden md:block md:w-64 mx-auto">
           <Image src={icon}></Image>
         </div>
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 dark:text-white">
           Hi, I'm <span className="text-blue-600">Manuel</span>. Nice to meet
           you.
         </h1>

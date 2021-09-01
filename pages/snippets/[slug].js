@@ -21,7 +21,10 @@ export default function Snippet({ meta, content, snippets }) {
             menuActive ? "" : "hidden"
           }`}
         >
-          <nav className="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 bg-gray-100 dark:bg-gray-900 lg:text-lg pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18) text-center md:text-left">
+          <nav
+            aria-label="secondary"
+            className="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 bg-gray-100 dark:bg-gray-900 lg:text-lg pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18) text-center md:text-left"
+          >
             <h2 className="pt-4 text-lg text-center lg:text-lg font-semibold tracking-widest uppercase text-gray-600 dark:text-white">
               More snippets
             </h2>

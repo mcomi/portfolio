@@ -27,7 +27,7 @@ export default function Navbar() {
   if (!mounted) return null;
 
   return (
-    <nav className="w-full dark:bg-gray-900 bg-gray-100">
+    <nav className="w-full dark:bg-gray-900 bg-gray-100" aria-label="primary">
       <div className="max-w-6xl mx-auto">
         <div className="flex text-center items-center justify-between p-6 w-full">
           <div className="w-full flex items-center justify-between">
@@ -99,6 +99,7 @@ export default function Navbar() {
                 className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-blue-600 hover:border-white"
                 onClick={handleActiveMenu}
                 aria-controls="mobile-menu"
+                aria-label="menu"
               >
                 <svg
                   className="fill-current h-4 w-4"
@@ -238,10 +239,11 @@ export default function Navbar() {
           isActive ? "absolute block" : "relative hidden"
         } mobile-nav p-8 top-0 left-0 bg-gray-100 dark:bg-gray-900 z-50 h-screen w-full transform transition-all dark:text-white absolute block`}
       >
-        <div className="flex justify-end mb-4">
+        <div className="flex justify-end mb-4" id="mobile-menu">
           <button
             className="border rounded-full p-3 h-12 w-12 flex items-center justify-center"
             onClick={handleActiveMenu}
+            aria-label="Close"
           >
             <svg
               className="w-8 h-8"
