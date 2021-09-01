@@ -20,12 +20,14 @@ export default function Home() {
           I'm a Software Engineer with 13 years of experience based in Mexico
           City.
         </p>
+
         <p className="lg:text-xl py-3">
           I'm specialized in leading software development and front-end
           technologies; and for the last 8 years I have been managing and
           leading a team of engineers at Filmoteca UNAM to develop technological
           solutions.
         </p>
+
         <p className="lg:text-xl pt-3 pb-10">
           I put together this website to show my passion for web technologies
           and some of the work I have done, as well as a guide of concepts and
