@@ -1,6 +1,7 @@
 import React from "react";
 import imageNotFound from "../assets/not-found.svg";
 import Image from "next/image";
+import Layout from "../components/Layout";
 import GradientCard from "../components/GradientCard";
 
 export default function NotFound() {
