@@ -10,7 +10,10 @@ export default function Snippet({ meta, content, snippets }) {
     setMenuActive(!menuActive);
   };
   return (
-    <Layout>
+    <Layout
+      title={`${meta.title} - Manuel Comi`}
+      description={meta.description}
+    >
       <div id="skip" className="flex">
         <aside
           id="docs-menu"
@@ -81,9 +84,9 @@ export default function Snippet({ meta, content, snippets }) {
               <path
                 d="M6 18L18 6M6 6l12 12"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></path>
             </svg>
           </>

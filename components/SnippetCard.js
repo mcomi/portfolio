@@ -15,7 +15,7 @@ export default function SnippetCard({
         className="border  dark:border-gray-200 border-gray-900 rounded p-4 w-full text-left"
         {...rest}
       >
-        <div class="flex items-center space-x-5">
+        <div className="flex items-center space-x-5">
           <div className="w-15 h-full">
             <Image
               alt={title}

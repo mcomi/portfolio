@@ -18,7 +18,7 @@ export default function GradientCard({ title, description, image, tone, url }) {
           {title}
         </h3>
         <p className="mt-1 text-gray-100">{description}</p>
-        <div class="h-32 mt-5 -mb-8 text-right relative md:pl-6 xl:pl-8 hidden sm:flex sm:items-end">
+        <div className="h-32 mt-5 -mb-8 text-right relative md:pl-6 xl:pl-8 hidden sm:flex sm:items-end">
           <Image alt={title} layout="fill" src={`/images/${image}`} />
         </div>
       </div>

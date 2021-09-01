@@ -1,29 +1,45 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { useTheme } from "next-themes";
 import Head from "next/head";
 import { motion } from "framer-motion";
 
-export default function Layout({ children, key }) {
+export default function Layout(props) {
   const variants = {
     hidden: { opacity: 0, x: -200, y: 0 },
     enter: { opacity: 1, x: 0, y: 0 },
     exit: { opacity: 0, x: 0, y: -100 },
   };
 
+  const { children, key, ...customMeta } = props;
+  const router = useRouter();
+  const meta = {
+    title: "Manuel Comi - Developer",
+    description: `Front-end developer, Tech Lead and Tech entusiast.`,
+    type: "website",
+    ...customMeta,
+  };
+
   return (
     <>
       <Head>
-        <link
-          rel="preload"
-          href="https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css"
-          as="script"
+        <title>{meta.title}</title>
+        <meta name="robots" content="follow, index" />
+        <meta content={meta.description} name="description" />
+        <meta
+          property="og:url"
+          content={`https://mcomix.vercel.app${router.asPath}`}
         />
         <link
-          href={`https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css`}
-          rel="stylesheet"
+          rel="canonical"
+          href={`https://mcomix.vercel.app${router.asPath}`}
         />
+        <meta property="og:type" content={meta.type} />
+        <meta property="og:site_name" content="Manuel Comi" />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:title" content={meta.title} />
       </Head>
       <div className="dark:bg-gray-900 dark:text-white flex flex-col justify-center min-h-screen">
         <motion.main
