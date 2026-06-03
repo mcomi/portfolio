@@ -30,6 +30,7 @@ export type CaseStudy = {
 
 export type SkillGroup = {
   title: string;
+  description: string;
   items: string[];
 };
 
@@ -497,12 +498,22 @@ export const featuredCaseSlugs = [
   "hbr-frontend-modernization",
   "hbr-ai-advisor-experience",
   "paywall-piano-migration",
+  "hbr-component-library-design-system",
+];
+
+export const additionalCaseSlugs = [
+  "hbr-executive-strategy-lab",
   "error-pages-mfe-s3-deployment",
+  "template-library-mvp2",
+  "editorial-layout-system-herozone",
+  "unam-filmoteca-digital-archive",
 ];
 
 export const skillGroups: SkillGroup[] = [
   {
     title: "Frontend",
+    description:
+      "My daily frontend work is centered on React and Next.js product surfaces, with attention to responsive behavior, accessibility, performance and maintainable styling.",
     items: [
       "React",
       "Next.js",
@@ -519,6 +530,8 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Architecture",
+    description:
+      "I work comfortably in systems where frontend architecture has to respect legacy behavior, shared providers, API contracts, feature flags and micro frontend boundaries.",
     items: [
       "Micro frontends",
       "Component libraries",
@@ -533,6 +546,8 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Testing / Quality",
+    description:
+      "Quality for me includes code review, documented component behavior, QA collaboration and implementation choices that make future changes easier to reason about.",
     items: [
       "Storybook",
       "Code reviews",
@@ -545,6 +560,8 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Infrastructure / Delivery",
+    description:
+      "I can follow frontend work into delivery: Jenkins pipelines, Docker, S3/CloudFront deployments, environment configuration, static artifacts and rollback concerns.",
     items: [
       "Jenkins",
       "Docker",
@@ -558,6 +575,8 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "AI / Product",
+    description:
+      "For AI product UX, I focus on useful states and trust-building flows: progressive loading, recommendations, feature-flagged rollout, service integration and analytics-aware behavior.",
     items: [
       "AI Advisor UX",
       "Conversational interfaces",
@@ -669,6 +688,12 @@ export function getCaseStudy(slug: string) {
 
 export function getFeaturedCaseStudies() {
   return featuredCaseSlugs
+    .map((slug) => getCaseStudy(slug))
+    .filter((study): study is CaseStudy => Boolean(study));
+}
+
+export function getAdditionalCaseStudies() {
+  return additionalCaseSlugs
     .map((slug) => getCaseStudy(slug))
     .filter((study): study is CaseStudy => Boolean(study));
 }

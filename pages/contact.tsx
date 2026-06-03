@@ -15,6 +15,9 @@ export default function ContactPage() {
         <p className={styles.pageLead}>
           Based in Mexico and open to remote or international teams. Best fit: senior frontend, lead frontend, AI product frontend and frontend/platform architecture roles.
         </p>
+        <p className={styles.pageLead}>
+          Public GitHub projects are available as selected examples. Most recent production work is represented through the case studies on this site because it lives in private enterprise repositories and organization-managed GitHub accounts.
+        </p>
       </section>
       <section className={`${styles.container} ${styles.section}`}>
         <div className={styles.cardsGrid}>

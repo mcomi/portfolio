@@ -22,7 +22,7 @@ const navItems = [
 
 export default function SiteLayout({
   children,
-  title = "Manuel Comi - Senior Frontend Engineer",
+  title = "Manuel Comi — Senior Frontend Engineer",
   description = "Senior Frontend Engineer based in Mexico, focused on React, Next.js, micro frontends, design systems, AI product UX and enterprise frontend modernization.",
 }: SiteLayoutProps) {
   const router = useRouter();
@@ -77,7 +77,7 @@ export default function SiteLayout({
               LinkedIn
             </a>
             <a href={profile.github} target="_blank" rel="noreferrer">
-              Public GitHub
+              Public GitHub projects
             </a>
           </div>
         </div>

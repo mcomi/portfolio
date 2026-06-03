@@ -22,6 +22,7 @@ export default function SkillsPage() {
           {skillGroups.map((group) => (
             <article className={styles.skillCard} key={group.title}>
               <h3>{group.title}</h3>
+              <p>{group.description}</p>
               <TagList items={group.items} label={`${group.title} skills`} />
             </article>
           ))}

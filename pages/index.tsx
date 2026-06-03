@@ -19,7 +19,7 @@ export default function HomePage() {
   const featuredCases = getFeaturedCaseStudies();
 
   return (
-    <SiteLayout title="Manuel Comi - Senior Frontend Engineer">
+    <SiteLayout title="Manuel Comi — Senior Frontend Engineer">
       <section className={styles.container}>
         <div className={styles.hero}>
           <div>
@@ -37,7 +37,7 @@ export default function HomePage() {
                 Contact Manuel
               </Link>
               <a className={styles.buttonSecondary} href={profile.github} target="_blank" rel="noreferrer">
-                View selected public work
+                GitHub demos and experiments
               </a>
             </div>
           </div>

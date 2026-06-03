@@ -1,9 +1,13 @@
 import CaseStudyCard from "@/components/CaseStudyCard";
+import SectionHeader from "@/components/SectionHeader";
 import SiteLayout from "@/components/SiteLayout";
-import { caseStudies } from "@/data/portfolio";
+import { getAdditionalCaseStudies, getFeaturedCaseStudies } from "@/data/portfolio";
 import styles from "@/styles/portfolio.module.css";
 
 export default function WorkPage() {
+  const featuredCases = getFeaturedCaseStudies();
+  const additionalCases = getAdditionalCaseStudies();
+
   return (
     <SiteLayout
       title="Work and Case Studies - Manuel Comi"
@@ -17,8 +21,25 @@ export default function WorkPage() {
         </p>
       </section>
       <section className={`${styles.container} ${styles.section}`}>
+        <SectionHeader
+          eyebrow="Featured case studies"
+          title="The strongest signal: modernization, AI UX, revenue flows and systems thinking."
+          text="These case studies represent the professional work most relevant to senior, lead and staff-level frontend roles."
+        />
         <div className={styles.cardsGrid}>
-          {caseStudies.map((study) => (
+          {featuredCases.map((study) => (
+            <CaseStudyCard key={study.slug} study={study} />
+          ))}
+        </div>
+      </section>
+      <section className={`${styles.container} ${styles.section}`}>
+        <SectionHeader
+          eyebrow="Additional work"
+          title="Supporting examples across product surfaces, delivery and systems background."
+          text="These projects add depth around premium editorial UX, production deployment, internal tools, frontend craft and earlier full-stack foundations."
+        />
+        <div className={styles.cardsGrid}>
+          {additionalCases.map((study) => (
             <CaseStudyCard key={study.slug} study={study} />
           ))}
         </div>
