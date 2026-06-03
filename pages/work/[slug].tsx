@@ -20,6 +20,7 @@ export default function CaseStudyPage({ study }: CaseStudyPageProps) {
         <p className={styles.eyebrow}>{study.eyebrow}</p>
         <h1 className={styles.pageTitle}>{study.title}</h1>
         <p className={styles.pageLead}>{study.summary}</p>
+        <p className={styles.confidentialityLabel}>{study.confidentiality}</p>
         <dl className={styles.heroFacts}>
           <div>
             <dt>Role</dt>

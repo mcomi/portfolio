@@ -20,6 +20,7 @@ export type CaseStudy = {
   stack: string[];
   learned: string;
   accent: string;
+  confidentiality: string;
   visual: {
     caption: string;
     steps: string[];
@@ -61,6 +62,12 @@ export const currentFocus = [
   "Micro frontend modernization",
   "Product-led engineering with international teams",
 ];
+
+export const githubActivityNote =
+  "Most of my recent engineering work since 2021 has been delivered through private enterprise repositories and organization-managed GitHub accounts tied to work email identities. Because of that, my public GitHub profile does not fully represent my production contribution history. This portfolio focuses on case studies that summarize the systems, product surfaces and technical challenges I have worked on across React, Next.js, micro frontends, design systems, AI product UX and CI/CD. My public GitHub is used for selected demos, experiments and current technical interests.";
+
+export const githubActivityShortNote =
+  "Much of my recent production work lives in private enterprise repositories and organization-managed GitHub accounts. My public GitHub highlights selected demos, experiments and current technical interests.";
 
 export const bring = [
   {
@@ -123,6 +130,7 @@ export const caseStudies: CaseStudy[] = [
     learned:
       "Modernization succeeds when architecture choices stay close to product reality: legacy behavior, analytics, deployment and team workflows matter as much as the new component code.",
     accent: "blue",
+    confidentiality: "Private enterprise work - details abstracted for confidentiality.",
     visual: {
       caption: "Abstracted architecture view - no proprietary details",
       steps: ["Legacy surface", "Micro frontend boundary", "Shared providers", "Reusable UI", "QA and release"],
@@ -174,6 +182,7 @@ export const caseStudies: CaseStudy[] = [
     learned:
       "The best component libraries are not just collections of UI. They encode product decisions, collaboration habits and the small constraints that make teams faster.",
     accent: "green",
+    confidentiality: "Private enterprise work - details abstracted for confidentiality.",
     visual: {
       caption: "Abstracted component system view - no proprietary details",
       steps: ["Design intent", "Component API", "Storybook docs", "Internal package", "MFE reuse"],
@@ -210,6 +219,7 @@ export const caseStudies: CaseStudy[] = [
     learned:
       "Premium editorial product work rewards precision: spacing, data shape, responsive behavior and analytics details all affect trust.",
     accent: "purple",
+    confidentiality: "Private enterprise work - details abstracted for confidentiality.",
     visual: {
       caption: "Abstracted premium content flow - no proprietary details",
       steps: ["Audience need", "Content provider", "Responsive layout", "Tracking", "Executive UX"],
@@ -247,6 +257,7 @@ export const caseStudies: CaseStudy[] = [
     learned:
       "AI product UI needs to communicate uncertainty, usefulness and progress. The frontend has a major role in making generated experiences feel trustworthy.",
     accent: "orange",
+    confidentiality: "Private enterprise work - details abstracted for confidentiality.",
     visual: {
       caption: "Abstracted AI advisor flow - no proprietary details",
       steps: ["User input", "AI-backed service", "Progressive loading", "Recommendation cards", "User action"],
@@ -299,6 +310,7 @@ export const caseStudies: CaseStudy[] = [
     learned:
       "Revenue-critical frontend work requires a different level of care: every timing issue, event and edge case can become a business problem.",
     accent: "red",
+    confidentiality: "Private enterprise work - details abstracted for confidentiality.",
     visual: {
       caption: "Abstracted paywall and analytics flow - no proprietary details",
       steps: ["Article context", "Paywall decision", "Piano behavior", "Analytics events", "Business reporting"],
@@ -351,6 +363,7 @@ export const caseStudies: CaseStudy[] = [
     learned:
       "Frontend production quality includes what happens after build: artifact shape, cache behavior, QA paths and rollback strategy all matter.",
     accent: "cyan",
+    confidentiality: "Private enterprise work - details abstracted for confidentiality.",
     visual: {
       caption: "Abstracted deployment flow - no proprietary details",
       steps: ["Next.js build", "Static artifacts", "S3 sync", "CloudFront", "QA/prod rollback"],
@@ -398,6 +411,7 @@ export const caseStudies: CaseStudy[] = [
     learned:
       "Complex UI becomes manageable when components own one job, data contracts are explicit and state transitions are visible.",
     accent: "blue",
+    confidentiality: "Private enterprise work - details abstracted for confidentiality.",
     visual: {
       caption: "Abstracted internal tool structure - no proprietary details",
       steps: ["Grid", "Filters", "Actions", "Dialogs", "Viewer"],
@@ -434,6 +448,7 @@ export const caseStudies: CaseStudy[] = [
     learned:
       "Frontend craft is architecture at a smaller scale: naming, variants, data shape and responsive rules decide whether a component ages well.",
     accent: "green",
+    confidentiality: "Private enterprise work - details abstracted for confidentiality.",
     visual: {
       caption: "Abstracted editorial composition view - no proprietary details",
       steps: ["Content model", "HeroZone", "Card variants", "Breakpoints", "Editorial page"],
@@ -470,6 +485,7 @@ export const caseStudies: CaseStudy[] = [
     learned:
       "Working in institutional systems teaches patience, ownership and respect for operational detail. Those habits transfer directly into enterprise frontend work.",
     accent: "purple",
+    confidentiality: "Institutional systems work - represented with non-confidential details.",
     visual: {
       caption: "Abstracted archive systems view - no proprietary details",
       steps: ["Archive workflow", "REST APIs", "Internal apps", "Infrastructure", "Preservation support"],
@@ -616,27 +632,34 @@ export const productFocus = {
 
 export const labs = [
   {
-    title: "AI Chat Streaming",
-    status: "Public experiment",
+    title: "Portfolio",
+    status: "Selected public work",
     summary:
-      "A public experiment around streaming AI responses and chat UI behavior. Useful as supporting proof of interest in AI product interfaces beyond private enterprise work.",
-    stack: ["TypeScript", "AI UX", "Streaming", "Frontend states"],
-    href: "https://github.com/mcomi/ai-chat-streaming",
-  },
-  {
-    title: "Portfolio Source",
-    status: "Production portfolio",
-    summary:
-      "The source for this portfolio: Next.js, TypeScript, structured content, case study routing, SEO metadata and abstract visuals for private work.",
+      "The source code for this portfolio, built to present private enterprise work through clear case studies, structured content and recruiter-friendly storytelling.",
     stack: ["Next.js", "React", "TypeScript", "CSS Modules", "SEO"],
     href: "https://github.com/mcomi/portfolio",
   },
   {
-    title: "Modern Frontend Notes",
+    title: "AI Streaming Demo",
     status: "Coming soon",
     summary:
-      "A planned public writing area for short notes on frontend modernization, AI UX, component architecture and delivery lessons from professional work.",
-    stack: ["Architecture notes", "Frontend strategy", "Product UX"],
+      "A small Next.js experiment exploring AI chat UX, streaming responses, loading states, error states and progressive rendering.",
+    stack: ["Next.js", "TypeScript", "AI UX", "Streaming", "Frontend states"],
+    href: "https://github.com/mcomi/ai-chat-streaming",
+  },
+  {
+    title: "Component System Playground",
+    status: "Coming soon",
+    summary:
+      "A focused React/Storybook playground for reusable UI components, accessibility patterns and scalable component APIs.",
+    stack: ["React", "Storybook", "Design systems", "Accessibility"],
+  },
+  {
+    title: "Frontend Architecture Notes",
+    status: "Coming soon",
+    summary:
+      "Notes and examples around micro frontends, feature flags, design systems, CI/CD and frontend modernization.",
+    stack: ["Micro frontends", "Feature flags", "CI/CD", "Architecture notes"],
   },
 ];
 

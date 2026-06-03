@@ -1,6 +1,6 @@
 import ContactPanel from "@/components/ContactPanel";
 import SiteLayout from "@/components/SiteLayout";
-import { profile } from "@/data/portfolio";
+import { githubActivityShortNote, profile } from "@/data/portfolio";
 import styles from "@/styles/portfolio.module.css";
 
 export default function ContactPage() {
@@ -21,7 +21,8 @@ export default function ContactPage() {
           <ContactPanel />
           <article className={styles.contactCard}>
             <h3>Direct links</h3>
-            <p>Email is the clearest way to start. Resume, LinkedIn and GitHub are available as supporting profile links.</p>
+            <p>Email is the clearest way to start. Resume, LinkedIn and selected public GitHub projects are available as supporting profile links.</p>
+            <p>{githubActivityShortNote}</p>
             <div className={styles.heroActions}>
               <a className={styles.button} href={`mailto:${profile.email}`}>
                 {profile.email}
@@ -30,7 +31,7 @@ export default function ContactPage() {
                 Resume
               </a>
               <a className={styles.buttonSecondary} href={profile.github} target="_blank" rel="noreferrer">
-                GitHub
+                Explore public GitHub projects
               </a>
               <a className={styles.buttonSecondary} href={profile.linkedin} target="_blank" rel="noreferrer">
                 LinkedIn

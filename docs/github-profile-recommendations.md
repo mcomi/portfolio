@@ -1,6 +1,6 @@
 # GitHub Profile Recommendations
 
-The portfolio now presents Manuel Comi as a Senior Frontend Engineer focused on React, Next.js, micro frontends, design systems, AI product UX and enterprise frontend modernization. The public GitHub profile should support that same signal.
+The portfolio now presents Manuel Comi as a Senior Frontend Engineer focused on React, Next.js, micro frontends, design systems, AI product UX and enterprise frontend modernization. The public GitHub profile should support that signal as selected public work, not as a complete work history.
 
 ## Profile Bio
 
@@ -37,7 +37,7 @@ If the `mcomi/mcomi` profile README does not exist, create one with:
 - One short positioning line.
 - Current focus areas.
 - Links to portfolio, resume, LinkedIn and selected public work.
-- A small section for "Private enterprise work" explaining that recent HBR/HBP work is represented through abstracted case studies because it is not public.
+- A small section for "Private enterprise work" explaining that recent HBR/HBP work is represented through abstracted case studies because it lives in private enterprise repositories and organization-managed accounts.
 
 ## Repository Hygiene
 

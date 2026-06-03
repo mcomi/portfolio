@@ -1,6 +1,6 @@
 import ContactPanel from "@/components/ContactPanel";
 import SiteLayout from "@/components/SiteLayout";
-import { timeline } from "@/data/portfolio";
+import { githubActivityNote, timeline } from "@/data/portfolio";
 import styles from "@/styles/portfolio.module.css";
 
 export default function AboutPage() {
@@ -55,6 +55,13 @@ export default function AboutPage() {
                 <p>{item.text}</p>
               </article>
           ))}
+        </div>
+      </section>
+
+      <section className={`${styles.container} ${styles.section}`}>
+        <div className={styles.noteBox}>
+          <h2>About GitHub activity</h2>
+          <p>{githubActivityNote}</p>
         </div>
       </section>
 

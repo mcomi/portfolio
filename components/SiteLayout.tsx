@@ -77,7 +77,7 @@ export default function SiteLayout({
               LinkedIn
             </a>
             <a href={profile.github} target="_blank" rel="noreferrer">
-              GitHub
+              Public GitHub
             </a>
           </div>
         </div>

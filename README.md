@@ -75,8 +75,13 @@ The `/work` page and `/work/[slug]` detail pages are generated from that data.
 
 The project is ready for Vercel. Set the production domain in the metadata helpers if the deployed URL changes from `https://mcomix.vercel.app`.
 
+## About GitHub Activity
+
+Most of Manuel's recent professional work since 2021 has been delivered through private enterprise repositories, consulting engagements and organization-managed GitHub identities. This portfolio is the primary public representation of that work. Public repositories are used as selected examples and experiments, not as a complete contribution history.
+
 ## Recommended Next Updates
 
 - Add real screenshots or approved visuals for private enterprise work where possible.
 - Add analytics after choosing a privacy-friendly provider.
 - Review `docs/github-profile-recommendations.md` and align pinned repositories with the portfolio positioning.
+- Review `docs/github-profile-strategy.md` for a GitHub strategy aligned with private enterprise work.

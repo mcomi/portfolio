@@ -7,6 +7,7 @@ import {
   bring,
   currentFocus,
   getFeaturedCaseStudies,
+  githubActivityShortNote,
   organizations,
   profile,
   productSignals,
@@ -36,7 +37,7 @@ export default function HomePage() {
                 Contact Manuel
               </Link>
               <a className={styles.buttonSecondary} href={profile.github} target="_blank" rel="noreferrer">
-                GitHub
+                View selected public work
               </a>
             </div>
           </div>
@@ -62,6 +63,16 @@ export default function HomePage() {
           {organizations.map((name) => (
             <span key={name}>{name}</span>
           ))}
+        </div>
+      </section>
+
+      <section className={`${styles.container} ${styles.section}`}>
+        <div className={styles.noteBox}>
+          <h2>Public GitHub context</h2>
+          <p>{githubActivityShortNote}</p>
+          <Link className={styles.buttonSecondary} href="/labs">
+            Explore public experiments
+          </Link>
         </div>
       </section>
 
