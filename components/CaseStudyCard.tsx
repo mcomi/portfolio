@@ -18,16 +18,10 @@ export default function CaseStudyCard({ study }: CaseStudyCardProps) {
         <span className={styles.cardKicker}>{study.category}</span>
         <h3>{study.title}</h3>
         <p>{study.summary}</p>
-        <dl className={styles.caseMeta}>
-          <div>
-            <dt>Role</dt>
-            <dd>{study.roleLabel}</dd>
-          </div>
-          <div>
-            <dt>Why it matters</dt>
-            <dd>{study.whyMatters}</dd>
-          </div>
-        </dl>
+        <div className={styles.caseMeta}>
+          <strong>Why it matters</strong>
+          <p>{study.whyMatters}</p>
+        </div>
         <ul className={styles.tagList} aria-label={`${study.title} stack`}>
           {study.stack.slice(0, 5).map((tag) => (
             <li className={styles.tag} key={tag}>

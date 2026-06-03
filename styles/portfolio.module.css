@@ -280,6 +280,16 @@
   display: grid;
   min-height: 100%;
   overflow: hidden;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.caseCard:hover {
+  border-color: rgba(37, 87, 214, 0.24);
+  box-shadow: 0 18px 46px rgba(18, 24, 38, 0.09);
+  transform: translateY(-2px);
 }
 
 .cardKicker {
@@ -326,19 +336,16 @@
 }
 
 .caseMeta {
-  border-top: 1px solid var(--line);
+  background: rgba(18, 24, 38, 0.035);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
   display: grid;
-  gap: 0.75rem;
+  gap: 0.25rem;
   margin: 1rem 0 0;
-  padding-top: 1rem;
+  padding: 0.8rem 0.9rem;
 }
 
-.caseMeta div {
-  display: grid;
-  gap: 0.2rem;
-}
-
-.caseMeta dt,
+.caseMeta strong,
 .heroFacts dt {
   color: var(--ink);
   font-size: 0.74rem;
@@ -347,11 +354,58 @@
   text-transform: uppercase;
 }
 
-.caseMeta dd,
+.caseMeta p,
 .heroFacts dd {
   color: var(--muted);
   font-size: 0.9rem;
   margin: 0;
+}
+
+.caseFlowStrip {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.98));
+  border-bottom: 1px solid var(--line);
+  box-shadow: inset 0 3px 0 var(--accent);
+  display: grid;
+  gap: 0.65rem;
+  min-height: 6.5rem;
+  padding: 0.95rem 1rem 0.85rem;
+}
+
+.caseFlowStrip > span {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.caseFlowStrip ol {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.caseFlowStrip li {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid rgba(18, 24, 38, 0.08);
+  border-radius: 999px;
+  color: var(--ink);
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.1;
+  min-height: 1.8rem;
+  padding: 0.38rem 0.58rem;
+}
+
+.caseFlowStrip li:not(:last-child)::after {
+  color: var(--accent);
+  content: "→";
+  font-weight: 900;
+  margin-left: 0.45rem;
 }
 
 .cardLinkText {
@@ -536,11 +590,6 @@
 
 .architectureVisual > * {
   position: relative;
-}
-
-.architectureVisualCompact {
-  border-radius: 0;
-  min-height: 15rem;
 }
 
 .visualHeader {
@@ -732,6 +781,10 @@
 
   .twoColumn {
     grid-template-columns: 0.8fr 1.2fr;
+  }
+
+  .caseFlowStrip {
+    min-height: 7rem;
   }
 
   .visualFlow {

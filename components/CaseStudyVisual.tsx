@@ -7,11 +7,25 @@ type CaseStudyVisualProps = {
 };
 
 export default function CaseStudyVisual({ study, compact = false }: CaseStudyVisualProps) {
+  if (compact) {
+    return (
+      <div
+        className={`${styles.caseFlowStrip} ${styles[`accent-${study.accent}`]}`}
+        aria-label={`${study.title} abstract flow`}
+      >
+        <span>{study.visual.caption.replace(" - no proprietary details", "")}</span>
+        <ol>
+          {study.visual.steps.map((step) => (
+            <li key={step}>{step}</li>
+          ))}
+        </ol>
+      </div>
+    );
+  }
+
   return (
     <div
-      className={`${styles.architectureVisual} ${styles[`accent-${study.accent}`]} ${
-        compact ? styles.architectureVisualCompact : ""
-      }`}
+      className={`${styles.architectureVisual} ${styles[`accent-${study.accent}`]}`}
       aria-label={study.visual.caption}
     >
       <div className={styles.visualHeader}>
