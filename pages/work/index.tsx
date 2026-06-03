@@ -7,6 +7,7 @@ import styles from "@/styles/portfolio.module.css";
 export default function WorkPage() {
   const featuredCases = getFeaturedCaseStudies();
   const additionalCases = getAdditionalCaseStudies();
+  const [flagshipCase, ...secondaryCases] = featuredCases;
 
   return (
     <SiteLayout
@@ -26,10 +27,13 @@ export default function WorkPage() {
           title="The strongest signal: modernization, AI UX, revenue flows and systems thinking."
           text="These case studies represent the professional work most relevant to senior, lead and staff-level frontend roles."
         />
-        <div className={styles.cardsGrid}>
-          {featuredCases.map((study) => (
-            <CaseStudyCard key={study.slug} study={study} />
-          ))}
+        <div className={styles.selectedWorkLayout}>
+          {flagshipCase ? <CaseStudyCard className={styles.flagshipCase} study={flagshipCase} /> : null}
+          <div className={styles.secondaryWorkGrid}>
+            {secondaryCases.map((study) => (
+              <CaseStudyCard key={study.slug} study={study} />
+            ))}
+          </div>
         </div>
       </section>
       <section className={`${styles.container} ${styles.section}`}>
@@ -38,7 +42,7 @@ export default function WorkPage() {
           title="Supporting examples across product surfaces, delivery and systems background."
           text="These projects add depth around premium editorial UX, production deployment, internal tools, frontend craft and earlier full-stack foundations."
         />
-        <div className={styles.cardsGrid}>
+        <div className={styles.additionalWorkGrid}>
           {additionalCases.map((study) => (
             <CaseStudyCard key={study.slug} study={study} />
           ))}

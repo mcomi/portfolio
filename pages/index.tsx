@@ -6,6 +6,7 @@ import SiteLayout from "@/components/SiteLayout";
 import {
   bring,
   currentFocus,
+  getAdditionalCaseStudies,
   getFeaturedCaseStudies,
   githubActivityShortNote,
   organizations,
@@ -17,6 +18,8 @@ import styles from "@/styles/portfolio.module.css";
 
 export default function HomePage() {
   const featuredCases = getFeaturedCaseStudies();
+  const additionalCases = getAdditionalCaseStudies();
+  const [flagshipCase, ...secondaryCases] = featuredCases;
 
   return (
     <SiteLayout title="Manuel Comi — Senior Frontend Engineer">
@@ -111,10 +114,18 @@ export default function HomePage() {
           title="Case studies built around modernization, systems and business-critical UX."
           text="These are written as senior engineering case studies: context, problem, role, approach and impact, without invented metrics."
         />
-        <div className={styles.cardsGrid}>
-          {featuredCases.map((study) => (
-            <CaseStudyCard key={study.slug} study={study} />
-          ))}
+        <div className={styles.selectedWorkLayout}>
+          {flagshipCase ? <CaseStudyCard className={styles.flagshipCase} study={flagshipCase} /> : null}
+          <div className={styles.secondaryWorkGrid}>
+            {secondaryCases.map((study) => (
+              <CaseStudyCard key={study.slug} study={study} />
+            ))}
+          </div>
+          <div className={styles.additionalWorkGrid}>
+            {additionalCases.map((study) => (
+              <CaseStudyCard key={study.slug} study={study} />
+            ))}
+          </div>
         </div>
       </section>
 

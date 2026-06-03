@@ -5,12 +5,13 @@ import styles from "@/styles/portfolio.module.css";
 
 type CaseStudyCardProps = {
   study: CaseStudy;
+  className?: string;
 };
 
-export default function CaseStudyCard({ study }: CaseStudyCardProps) {
+export default function CaseStudyCard({ study, className }: CaseStudyCardProps) {
   return (
     <Link
-      className={`${styles.caseCard} ${styles[`accent-${study.accent}`]}`}
+      className={`${styles.caseCard} ${styles[`accent-${study.accent}`]} ${className ?? ""}`}
       href={`/work/${study.slug}`}
     >
       <CaseStudyVisual study={study} compact />

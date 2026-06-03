@@ -134,7 +134,7 @@ export const caseStudies: CaseStudy[] = [
     confidentiality: "Private enterprise work - details abstracted for confidentiality.",
     visual: {
       caption: "Abstracted architecture view - no proprietary details",
-      steps: ["Legacy surface", "Micro frontend boundary", "Shared providers", "Reusable UI", "QA and release"],
+      steps: ["Legacy surface", "MFE boundary", "Shared providers", "Reusable UI", "QA/release"],
     },
     deepDive: [
       {
@@ -261,7 +261,7 @@ export const caseStudies: CaseStudy[] = [
     confidentiality: "Private enterprise work - details abstracted for confidentiality.",
     visual: {
       caption: "Abstracted AI advisor flow - no proprietary details",
-      steps: ["User input", "AI-backed service", "Progressive loading", "Recommendation cards", "User action"],
+      steps: ["User intent", "AI service", "Progressive states", "Recommendations", "Action"],
     },
     deepDive: [
       {
@@ -314,7 +314,7 @@ export const caseStudies: CaseStudy[] = [
     confidentiality: "Private enterprise work - details abstracted for confidentiality.",
     visual: {
       caption: "Abstracted paywall and analytics flow - no proprietary details",
-      steps: ["Article context", "Paywall decision", "Piano behavior", "Analytics events", "Business reporting"],
+      steps: ["Article", "Paywall", "Piano", "Analytics", "Reporting"],
     },
     deepDive: [
       {
@@ -367,7 +367,7 @@ export const caseStudies: CaseStudy[] = [
     confidentiality: "Private enterprise work - details abstracted for confidentiality.",
     visual: {
       caption: "Abstracted deployment flow - no proprietary details",
-      steps: ["Next.js build", "Static artifacts", "S3 sync", "CloudFront", "QA/prod rollback"],
+      steps: ["Build", "Static artifacts", "S3", "CloudFront", "Rollback"],
     },
     deepDive: [
       {
@@ -498,14 +498,14 @@ export const featuredCaseSlugs = [
   "hbr-frontend-modernization",
   "hbr-ai-advisor-experience",
   "paywall-piano-migration",
-  "hbr-component-library-design-system",
 ];
 
 export const additionalCaseSlugs = [
-  "hbr-executive-strategy-lab",
   "error-pages-mfe-s3-deployment",
-  "template-library-mvp2",
+  "hbr-component-library-design-system",
+  "hbr-executive-strategy-lab",
   "editorial-layout-system-herozone",
+  "template-library-mvp2",
   "unam-filmoteca-digital-archive",
 ];
 
