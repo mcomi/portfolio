@@ -40,7 +40,7 @@ export default function HomePage() {
                 Contact Manuel
               </Link>
               <a className={styles.buttonSecondary} href={profile.github} target="_blank" rel="noreferrer">
-                GitHub demos and experiments
+                GitHub experiments & labs
               </a>
             </div>
           </div>

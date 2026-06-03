@@ -16,14 +16,13 @@ const navItems = [
   { href: "/experience", label: "Experience" },
   { href: "/work", label: "Work" },
   { href: "/skills", label: "Skills" },
-  { href: "/labs", label: "Labs" },
   { href: "/contact", label: "Contact" },
 ];
 
 export default function SiteLayout({
   children,
   title = "Manuel Comi — Senior Frontend Engineer",
-  description = "Senior Frontend Engineer based in Mexico, focused on React, Next.js, micro frontends, design systems, AI product UX and enterprise frontend modernization.",
+  description = "Senior Frontend Engineer based in Mexico City. I build scalable React and Next.js platforms, design systems, and AI-driven product experiences for enterprise teams.",
 }: SiteLayoutProps) {
   const router = useRouter();
   const canonical = `https://mcomix.vercel.app${router.asPath}`;

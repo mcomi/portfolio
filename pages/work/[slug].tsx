@@ -30,16 +30,16 @@ export default function CaseStudyPage({ study }: CaseStudyPageProps) {
             <dt>Category</dt>
             <dd>{study.category}</dd>
           </div>
-          <div>
-            <dt>Why it matters</dt>
-            <dd>{study.whyMatters}</dd>
-          </div>
         </dl>
         <TagList items={study.stack} label={`${study.title} technology stack`} />
       </section>
 
       <section className={`${styles.container} ${styles.article}`}>
         <CaseStudyVisual study={study} />
+        <blockquote className={`${styles.whyCallout} ${styles[`accent-${study.accent}`]}`}>
+          <span>Why it matters</span>
+          <p>{study.whyMatters}</p>
+        </blockquote>
         <div className={styles.articleBlock}>
           <h2>Context</h2>
           <p>{study.context}</p>

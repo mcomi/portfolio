@@ -46,6 +46,29 @@ export default function AboutPage() {
       </section>
 
       <section className={`${styles.container} ${styles.section}`}>
+        <div className={styles.twoColumn}>
+          <div>
+            <p className={styles.eyebrow}>How I think about frontend</p>
+          </div>
+          <div className={styles.voiceBlock}>
+            <h2>What I have learned building at scale</h2>
+            <p>
+              I do not think a frontend migration succeeds because the new app is cleaner. It succeeds when the new surface can live with the old system long enough to move safely: analytics still fire, providers still make sense, QA can verify behavior and teams understand where ownership changes.
+            </p>
+            <p>
+              I see accessibility as an architecture decision, not a final checklist. If component APIs make focus, labels, states and composition awkward, accessibility becomes expensive. If those choices are built into the system early, teams move faster and the product gets more reliable.
+            </p>
+            <p>
+              AI product UX has made that even clearer for me. The frontend is not just rendering a response; it is explaining progress, uncertainty and next actions. Good AI interfaces need loading states, recommendation structure, fallback behavior and enough transparency for users to trust what they are seeing.
+            </p>
+            <p>
+              The frontend work I enjoy most is where product judgment and engineering judgment are hard to separate. The UI matters, but so do data contracts, rollout paths, performance, tracking and the long-term cost of every shortcut.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className={`${styles.container} ${styles.section}`}>
         <div className={styles.timeline}>
           {timeline.map((item) => (
             <article className={styles.timelineItem} key={item.title}>

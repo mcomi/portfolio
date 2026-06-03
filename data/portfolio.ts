@@ -182,7 +182,7 @@ export const caseStudies: CaseStudy[] = [
     stack: ["React", "Storybook", "Internal npm package", "CSS Modules", "SCSS", "Accessibility", "Design systems"],
     learned:
       "The best component libraries are not just collections of UI. They encode product decisions, collaboration habits and the small constraints that make teams faster.",
-    accent: "green",
+    accent: "teal",
     confidentiality: "Private enterprise work - details abstracted for confidentiality.",
     visual: {
       caption: "Abstracted component system view - no proprietary details",
@@ -219,7 +219,7 @@ export const caseStudies: CaseStudy[] = [
     stack: ["Next.js", "React", "getServerSideProps", "CSS Modules", "SCSS", "DataLayer", "Content APIs"],
     learned:
       "Premium editorial product work rewards precision: spacing, data shape, responsive behavior and analytics details all affect trust.",
-    accent: "purple",
+    accent: "green",
     confidentiality: "Private enterprise work - details abstracted for confidentiality.",
     visual: {
       caption: "Abstracted premium content flow - no proprietary details",
@@ -257,11 +257,11 @@ export const caseStudies: CaseStudy[] = [
     stack: ["React", "Next.js", "AI UX", "Conversational UI", "Feature flags", "SSE/EventSource exploration", "APIs"],
     learned:
       "AI product UI needs to communicate uncertainty, usefulness and progress. The frontend has a major role in making generated experiences feel trustworthy.",
-    accent: "orange",
+    accent: "purple",
     confidentiality: "Private enterprise work - details abstracted for confidentiality.",
     visual: {
       caption: "Abstracted AI advisor flow - no proprietary details",
-      steps: ["User intent", "AI service", "Progressive states", "Recommendations", "Action"],
+      steps: ["User intent", "AI service response", "Progressive UI states", "Recommendation cards", "User action"],
     },
     deepDive: [
       {
@@ -314,7 +314,7 @@ export const caseStudies: CaseStudy[] = [
     confidentiality: "Private enterprise work - details abstracted for confidentiality.",
     visual: {
       caption: "Abstracted paywall and analytics flow - no proprietary details",
-      steps: ["Article", "Paywall", "Piano", "Analytics", "Reporting"],
+      steps: ["Article context", "Paywall decision", "Piano trigger", "Analytics event", "Business reporting"],
     },
     deepDive: [
       {
@@ -363,7 +363,7 @@ export const caseStudies: CaseStudy[] = [
     stack: ["Next.js", "AWS S3", "CloudFront", "Jenkins", "Static assets", "assetPrefix", "basePath"],
     learned:
       "Frontend production quality includes what happens after build: artifact shape, cache behavior, QA paths and rollback strategy all matter.",
-    accent: "cyan",
+    accent: "orange",
     confidentiality: "Private enterprise work - details abstracted for confidentiality.",
     visual: {
       caption: "Abstracted deployment flow - no proprietary details",
@@ -448,7 +448,7 @@ export const caseStudies: CaseStudy[] = [
     stack: ["Next.js", "React", "CSS Modules", "SCSS", "Responsive design", "ContentProvider", "Figma"],
     learned:
       "Frontend craft is architecture at a smaller scale: naming, variants, data shape and responsive rules decide whether a component ages well.",
-    accent: "green",
+    accent: "teal",
     confidentiality: "Private enterprise work - details abstracted for confidentiality.",
     visual: {
       caption: "Abstracted editorial composition view - no proprietary details",
@@ -485,7 +485,7 @@ export const caseStudies: CaseStudy[] = [
     stack: ["Java", "REST APIs", "Docker", "DevOps", "Security", "Digital asset management", "Infrastructure"],
     learned:
       "Working in institutional systems teaches patience, ownership and respect for operational detail. Those habits transfer directly into enterprise frontend work.",
-    accent: "purple",
+    accent: "blue",
     confidentiality: "Institutional systems work - represented with non-confidential details.",
     visual: {
       caption: "Abstracted archive systems view - no proprietary details",
