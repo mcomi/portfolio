@@ -792,6 +792,28 @@
   --accent: var(--cyan);
 }
 
+@media (max-width: 679px) {
+  .container {
+    padding-left: clamp(20px, 5vw, 32px);
+    padding-right: clamp(20px, 5vw, 32px);
+  }
+
+  .container.section,
+  .container.pageHero,
+  .container.article {
+    padding-left: clamp(20px, 5vw, 32px);
+    padding-right: clamp(20px, 5vw, 32px);
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .pageHero {
+    padding: 3.25rem 0 1.75rem;
+  }
+}
+
 @media (min-width: 680px) {
   .hero {
     grid-template-columns: minmax(0, 1.35fr) minmax(20rem, 0.65fr);
