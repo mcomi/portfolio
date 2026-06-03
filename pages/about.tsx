@@ -11,9 +11,9 @@ export default function AboutPage() {
     >
       <section className={`${styles.container} ${styles.pageHero}`}>
         <p className={styles.eyebrow}>About</p>
-        <h1 className={styles.pageTitle}>A frontend engineer with full-stack roots and product architecture focus.</h1>
+        <h1 className={styles.pageTitle}>A frontend engineer who understands the system behind the interface.</h1>
         <p className={styles.pageLead}>
-          I am Manuel Comi, a Senior Frontend Engineer based in Mexico. My career started in broader software and infrastructure work, then sharpened into modern frontend engineering for complex product environments.
+          I am Manuel Comi, a Senior Frontend Engineer based in Mexico. My strongest recent work has been with Harvard Business Review / Harvard Business Publishing through consulting engagements, where frontend quality depends on product context, architecture and delivery details.
         </p>
       </section>
 
@@ -26,19 +26,19 @@ export default function AboutPage() {
             <div className={styles.articleBlock}>
               <h2>Frontend specialization with systems context</h2>
               <p>
-                I care about UI quality, but I do not treat frontend as only visual work. I have worked with APIs, deployment workflows, AWS, Docker, Jenkins and legacy systems, which helps me understand the real constraints behind modern product delivery.
+                I started with full-stack and infrastructure work before specializing in modern frontend. That background helps me understand real production constraints: APIs, deployment workflows, AWS, Docker, Jenkins, security, legacy systems and the operational details behind product delivery.
               </p>
             </div>
             <div className={styles.articleBlock}>
               <h2>Recent strength: HBR and enterprise modernization</h2>
               <p>
-                Since 2021 my strongest work has centered on Harvard Business Review / Harvard Business Publishing through consulting engagements: micro frontend migration, reusable component libraries, Executive experiences, AI Advisor initiatives, paywall migration and CI/CD work.
+                Since 2021, my strongest work has centered on React and Next.js modernization, micro frontend migration, reusable component libraries, Executive experiences, AI Advisor initiatives, paywall/Piano migration, editorial layouts, error pages MFE and CI/CD work.
               </p>
             </div>
             <div className={styles.articleBlock}>
               <h2>Product and collaboration</h2>
               <p>
-                I work well with distributed teams in English, especially where frontend needs to align design, product, backend, analytics and QA. I enjoy turning ambiguous product needs into components, pages and workflows that are clear to users and maintainable for teams.
+                I like frontend work where the hard part is not only the UI, but the system behind it: data shape, shared components, rollout, analytics, performance and long-term maintainability. I work well with distributed teams in English, especially where frontend needs to align product, UX, backend, QA and delivery.
               </p>
             </div>
           </div>
@@ -49,10 +49,11 @@ export default function AboutPage() {
         <div className={styles.timeline}>
           {timeline.map((item) => (
             <article className={styles.timelineItem} key={item.title}>
-              <strong>{item.period}</strong>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
+                <strong>{item.period}</strong>
+                <h3>{item.title}</h3>
+                <p className={styles.timelineOrg}>{item.org}</p>
+                <p>{item.text}</p>
+              </article>
           ))}
         </div>
       </section>

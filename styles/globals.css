@@ -41,6 +41,12 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(37, 87, 214, 0.45);
+  outline-offset: 3px;
+}
+
 button,
 input,
 textarea {

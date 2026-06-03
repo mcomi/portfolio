@@ -13,15 +13,17 @@ type SiteLayoutProps = {
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/experience", label: "Experience" },
   { href: "/work", label: "Work" },
   { href: "/skills", label: "Skills" },
+  { href: "/labs", label: "Labs" },
   { href: "/contact", label: "Contact" },
 ];
 
 export default function SiteLayout({
   children,
   title = "Manuel Comi - Senior Frontend Engineer",
-  description = profile.subheadline,
+  description = "Senior Frontend Engineer based in Mexico, focused on React, Next.js, micro frontends, design systems, AI product UX and enterprise frontend modernization.",
 }: SiteLayoutProps) {
   const router = useRouter();
   const canonical = `https://mcomix.vercel.app${router.asPath}`;
@@ -40,6 +42,8 @@ export default function SiteLayout({
         <meta property="og:url" content={canonical} />
         <meta property="og:image" content="https://mcomix.vercel.app/og.svg" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
       </Head>
       <a className="skip-link" href="#main">
         Skip to content
@@ -67,6 +71,7 @@ export default function SiteLayout({
             recruiters, hiring managers and technical leaders.
           </span>
           <div className={styles.linkList}>
+            <a href={profile.resumePath}>Resume</a>
             <a href={`mailto:${profile.email}`}>Email</a>
             <a href={profile.linkedin} target="_blank" rel="noreferrer">
               LinkedIn

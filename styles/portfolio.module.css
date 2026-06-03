@@ -14,6 +14,7 @@
 .navInner {
   align-items: center;
   display: flex;
+  gap: 1rem;
   justify-content: space-between;
   margin: 0 auto;
   max-width: 1180px;
@@ -41,8 +42,11 @@
 
 .navLinks {
   align-items: center;
-  display: none;
+  display: flex;
   gap: 1.1rem;
+  justify-content: flex-end;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .navLinks a {
@@ -107,6 +111,16 @@
   font-weight: 800;
   min-height: 2.85rem;
   padding: 0.8rem 1rem;
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease,
+    border-color 150ms ease;
+}
+
+.button:hover,
+.buttonSecondary:hover {
+  box-shadow: 0 12px 30px rgba(18, 24, 38, 0.12);
+  transform: translateY(-1px);
 }
 
 .button {
@@ -247,6 +261,16 @@
   overflow: hidden;
 }
 
+.cardKicker {
+  color: var(--blue);
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
 .caseVisual {
   align-items: end;
   background:
@@ -280,6 +304,42 @@
   margin: 0;
 }
 
+.caseMeta {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0 0;
+  padding-top: 1rem;
+}
+
+.caseMeta div {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.caseMeta dt,
+.heroFacts dt {
+  color: var(--ink);
+  font-size: 0.74rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.caseMeta dd,
+.heroFacts dd {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.cardLinkText {
+  color: var(--blue);
+  display: inline-flex;
+  font-weight: 850;
+  margin-top: 1rem;
+}
+
 .tagList {
   display: flex;
   flex-wrap: wrap;
@@ -310,6 +370,26 @@
   color: rgba(255, 255, 255, 0.72);
 }
 
+.focusList {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: 1fr;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.focusList li {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--blue);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(18, 24, 38, 0.04);
+  color: var(--ink);
+  font-weight: 800;
+  padding: 1rem;
+}
+
 .timeline {
   display: grid;
   gap: 1rem;
@@ -328,6 +408,12 @@
 
 .timelineItem h3 {
   margin: 0.2rem 0 0.25rem;
+}
+
+.timelineOrg {
+  color: var(--ink) !important;
+  font-weight: 750;
+  margin-bottom: 0.35rem !important;
 }
 
 .timelineItem p {
@@ -376,6 +462,162 @@
   gap: 0.65rem;
   margin: 0;
   padding-left: 1.2rem;
+}
+
+.heroFacts {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.3rem 0 0;
+}
+
+.heroFacts div {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.9rem;
+}
+
+.architectureVisual {
+  background:
+    linear-gradient(135deg, rgba(18, 24, 38, 0.96), rgba(18, 24, 38, 0.86)),
+    linear-gradient(135deg, var(--accent), transparent);
+  border-radius: 8px;
+  color: white;
+  display: grid;
+  gap: 1.2rem;
+  overflow: hidden;
+  padding: 1.2rem;
+  position: relative;
+}
+
+.architectureVisual::before {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 26px 26px;
+  content: "";
+  inset: 0;
+  opacity: 0.55;
+  position: absolute;
+}
+
+.architectureVisual > * {
+  position: relative;
+}
+
+.architectureVisualCompact {
+  border-radius: 0;
+  min-height: 15rem;
+}
+
+.visualHeader {
+  align-items: start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: space-between;
+}
+
+.visualHeader span,
+.visualHeader strong {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 850;
+  padding: 0.38rem 0.62rem;
+}
+
+.visualHeader strong {
+  color: rgba(255, 255, 255, 0.76);
+  font-weight: 700;
+}
+
+.visualFlow {
+  display: grid;
+  gap: 0.65rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.visualFlow li {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: auto 1fr;
+  padding: 0.7rem;
+}
+
+.visualFlow li span {
+  align-items: center;
+  background: white;
+  border-radius: 6px;
+  color: var(--ink);
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 900;
+  height: 1.8rem;
+  justify-content: center;
+  width: 1.8rem;
+}
+
+.visualFlow li strong {
+  font-size: 0.94rem;
+}
+
+.resumeTimeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.resumeItem {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 1.2rem;
+  padding: 1.25rem;
+}
+
+.resumeItem span {
+  color: var(--blue);
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.resumeItem h2 {
+  font-size: 1.45rem;
+  line-height: 1.15;
+  margin: 0.35rem 0;
+}
+
+.resumeItem p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.resumeItem small {
+  color: var(--muted);
+  display: block;
+  font-weight: 700;
+  margin-top: 0.35rem;
+}
+
+.resumeItem ul {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.resumeItem li {
+  color: var(--muted);
 }
 
 .footer {
@@ -428,10 +670,6 @@
 }
 
 @media (min-width: 680px) {
-  .navLinks {
-    display: flex;
-  }
-
   .hero {
     grid-template-columns: minmax(0, 1.35fr) minmax(20rem, 0.65fr);
     padding-top: 5.5rem;
@@ -450,12 +688,30 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .focusList,
+  .heroFacts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .sectionHeader {
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   }
 
   .twoColumn {
     grid-template-columns: 0.8fr 1.2fr;
+  }
+
+  .visualFlow {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .visualFlow li {
+    align-content: start;
+    grid-template-columns: 1fr;
+  }
+
+  .resumeItem {
+    grid-template-columns: minmax(14rem, 0.65fr) minmax(0, 1.35fr);
   }
 }
 

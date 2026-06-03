@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { CaseStudy } from "@/data/portfolio";
+import CaseStudyVisual from "@/components/CaseStudyVisual";
 import styles from "@/styles/portfolio.module.css";
 
 type CaseStudyCardProps = {
@@ -12,12 +13,21 @@ export default function CaseStudyCard({ study }: CaseStudyCardProps) {
       className={`${styles.caseCard} ${styles[`accent-${study.accent}`]}`}
       href={`/work/${study.slug}`}
     >
-      <div className={styles.caseVisual} aria-hidden="true">
-        <span>{study.eyebrow}</span>
-      </div>
+      <CaseStudyVisual study={study} compact />
       <div className={styles.caseBody}>
+        <span className={styles.cardKicker}>{study.category}</span>
         <h3>{study.title}</h3>
         <p>{study.summary}</p>
+        <dl className={styles.caseMeta}>
+          <div>
+            <dt>Role</dt>
+            <dd>{study.roleLabel}</dd>
+          </div>
+          <div>
+            <dt>Why it matters</dt>
+            <dd>{study.whyMatters}</dd>
+          </div>
+        </dl>
         <ul className={styles.tagList} aria-label={`${study.title} stack`}>
           {study.stack.slice(0, 5).map((tag) => (
             <li className={styles.tag} key={tag}>
@@ -25,6 +35,7 @@ export default function CaseStudyCard({ study }: CaseStudyCardProps) {
             </li>
           ))}
         </ul>
+        <span className={styles.cardLinkText}>Open case study</span>
       </div>
     </Link>
   );

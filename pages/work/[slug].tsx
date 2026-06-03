@@ -1,5 +1,6 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
+import CaseStudyVisual from "@/components/CaseStudyVisual";
 import TagList from "@/components/TagList";
 import SiteLayout from "@/components/SiteLayout";
 import { caseStudies, getCaseStudy, type CaseStudy } from "@/data/portfolio";
@@ -19,13 +20,25 @@ export default function CaseStudyPage({ study }: CaseStudyPageProps) {
         <p className={styles.eyebrow}>{study.eyebrow}</p>
         <h1 className={styles.pageTitle}>{study.title}</h1>
         <p className={styles.pageLead}>{study.summary}</p>
+        <dl className={styles.heroFacts}>
+          <div>
+            <dt>Role</dt>
+            <dd>{study.roleLabel}</dd>
+          </div>
+          <div>
+            <dt>Category</dt>
+            <dd>{study.category}</dd>
+          </div>
+          <div>
+            <dt>Why it matters</dt>
+            <dd>{study.whyMatters}</dd>
+          </div>
+        </dl>
         <TagList items={study.stack} label={`${study.title} technology stack`} />
       </section>
 
       <section className={`${styles.container} ${styles.article}`}>
-        <div className={`${styles.caseVisual} ${styles[`accent-${study.accent}`]}`} aria-hidden="true">
-          <span>Visual placeholder for private enterprise work</span>
-        </div>
+        <CaseStudyVisual study={study} />
         <div className={styles.articleBlock}>
           <h2>Context</h2>
           <p>{study.context}</p>
@@ -54,6 +67,19 @@ export default function CaseStudyPage({ study }: CaseStudyPageProps) {
             ))}
           </ul>
         </div>
+        {study.deepDive?.map((section) => (
+          <div className={styles.articleBlock} key={section.title}>
+            <h2>{section.title}</h2>
+            {section.text ? <p>{section.text}</p> : null}
+            {section.items ? (
+              <ul>
+                {section.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            ) : null}
+          </div>
+        ))}
         <div className={styles.articleBlock}>
           <h2>What I learned</h2>
           <p>{study.learned}</p>

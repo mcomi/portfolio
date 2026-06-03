@@ -5,6 +5,7 @@ import SectionHeader from "@/components/SectionHeader";
 import SiteLayout from "@/components/SiteLayout";
 import {
   bring,
+  currentFocus,
   getFeaturedCaseStudies,
   organizations,
   profile,
@@ -17,7 +18,7 @@ export default function HomePage() {
   const featuredCases = getFeaturedCaseStudies();
 
   return (
-    <SiteLayout>
+    <SiteLayout title="Manuel Comi - Senior Frontend Engineer">
       <section className={styles.container}>
         <div className={styles.hero}>
           <div>
@@ -28,9 +29,15 @@ export default function HomePage() {
               <Link className={styles.button} href="/work">
                 View case studies
               </Link>
+              <a className={styles.buttonSecondary} href={profile.resumePath}>
+                Download Resume
+              </a>
               <Link className={styles.buttonSecondary} href="/contact">
                 Contact Manuel
               </Link>
+              <a className={styles.buttonSecondary} href={profile.github} target="_blank" rel="noreferrer">
+                GitHub
+              </a>
             </div>
           </div>
           <aside className={styles.heroPanel} aria-label="Profile summary">
@@ -61,8 +68,8 @@ export default function HomePage() {
       <section className={`${styles.container} ${styles.section}`}>
         <SectionHeader
           eyebrow="What I bring"
-          title="Modern frontend work with product and platform judgment."
-          text="The strongest signal in this portfolio is not a list of tools. It is the pattern of working inside complex systems, making them easier to evolve and shipping experiences people actually use."
+          title="Frontend ownership across product, architecture and delivery."
+          text="The strongest signal in this portfolio is the pattern of working inside complex systems, making them easier to evolve and shipping experiences people actually use."
         />
         <div className={styles.cardsGrid}>
           {bring.map((item) => (
@@ -72,6 +79,19 @@ export default function HomePage() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className={`${styles.container} ${styles.section}`}>
+        <SectionHeader
+          eyebrow="Currently focused on"
+          title="The frontend problems I want to keep solving."
+          text="I am most interested in roles where implementation quality, product judgment and platform thinking need to move together."
+        />
+        <ul className={styles.focusList}>
+          {currentFocus.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
       </section>
 
       <section className={`${styles.container} ${styles.section}`}>
@@ -99,6 +119,7 @@ export default function HomePage() {
               <article className={styles.timelineItem} key={item.title}>
                 <strong>{item.period}</strong>
                 <h3>{item.title}</h3>
+                <p className={styles.timelineOrg}>{item.org}</p>
                 <p>{item.text}</p>
               </article>
             ))}

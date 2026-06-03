@@ -8,7 +8,7 @@ export default function Sitemap() {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-  const routes = ["/", "/about", "/work", "/skills", "/contact"].concat(
+  const routes = ["/", "/about", "/experience", "/work", "/skills", "/labs", "/contact"].concat(
     caseStudies.map((study) => `/work/${study.slug}`),
   );
 

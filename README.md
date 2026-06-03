@@ -77,8 +77,6 @@ The project is ready for Vercel. Set the production domain in the metadata helpe
 
 ## Recommended Next Updates
 
-- Replace the placeholder email in `data/portfolio.ts`.
-- Add an updated CV PDF to `public/` and link it from the hero/contact CTAs.
 - Add real screenshots or approved visuals for private enterprise work where possible.
-- Replace `/public/og.svg` with a custom rendered Open Graph image.
 - Add analytics after choosing a privacy-friendly provider.
+- Review `docs/github-profile-recommendations.md` and align pinned repositories with the portfolio positioning.
